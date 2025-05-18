@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import 'primereact/resources/themes/lara-light-blue/theme.css'; // ou outro tema
+import 'primereact/resources/themes/lara-light-pink/theme.css'; // ou outro tema
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 

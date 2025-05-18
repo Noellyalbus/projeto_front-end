@@ -11,9 +11,9 @@ const Header = () => {
 
   return (
     <header className="p-3 shadow-2">
-      <div className="flex align-items-center justify-content-between flex-wrap">
+      <div className="flex align-items-center justify-content-evenly flex-wrap px-4 py-3">
         {/* Botão menu hambúrguer (mobile) */}
-        <div className="lg:hidden">
+        <div className="lg:hidden mr-2">
           <Button
             icon="pi pi-bars"
             text
@@ -23,29 +23,24 @@ const Header = () => {
         </div>
 
         {/* Logo */}
-        <div className="flex align-items-center mx-2 lg:py-3">
-          <Logo location="header" />
-        </div>
+        <Logo location={"header"} />
 
         {/* Campo de busca (desktop) */}
-        <div className="hidden lg:flex align-items-center relative" style={{ width: '559px', height: '60px' }}>
+        <div className="hidden lg:flex align-items-center relative ml-4" style={{ width: "559px", height: "60px" }}>
           <InputText
             placeholder="Pesquisar produto..."
-            className="w-full h-full pr-5 bg-light-gray-3"
+            className="w-full h-full border-none border-round-md pr-5 bg-light-gray-3 text-x"
             style={{
-              borderRadius: '8px',
-              paddingRight: '2.5rem', // espaço pro ícone
-              height: '100%',
+              paddingLeft: '1rem',
             }}
           />
           <i
-            className="pi pi-search"
+            className="pi pi-search text-light-gray text-x"
             style={{
               position: 'absolute',
               right: '1rem',
               top: '50%',
               transform: 'translateY(-50%)',
-              color: '#888' // ou uma cor secundária
             }}
           />
         </div>
@@ -64,17 +59,18 @@ const Header = () => {
           </div>
 
           {/* Cadastre-se + Entrar (desktop) */}
-          <div className="hidden lg:flex align-items-center gap-6">
+          <div className="hidden lg:flex align-items-center gap-3 ml-4">
             <NavLink
               to="/cadastro"
-              className="text-dark-gray-3 font-normal underline hover:underline"
+              className="text-dark-gray-3 font-normal underline"
+              style={{ width: "102px", height: "28px" }}
             >
-              Cadastre-se
+              <div className="flex align-items-center justify-content-center h-full">Cadastre-se</div>
             </NavLink>
             <NavLink to="/login">
               <Button
                 label="Entrar"
-                className="font-bold text-white"
+                className="w-7rem h-3rem border-round-lg border-none font-bold text-white text-x"
                 style={{ background: "#c62f65", border: "none" }}
               />
             </NavLink>
@@ -82,16 +78,13 @@ const Header = () => {
 
 
           {/* Carrinho */}
-          <div className="relative cursor-pointer">
+          <div className="relative cursor-pointer ml-7">
             <img
               src="../../assets/mini-cart.svg"
               alt="Carrinho"
               width={24}
               height={24}
             />
-            <span className="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold px-2 py-1 border-circle">
-              2
-            </span>
           </div>
         </div>
       </div>
@@ -122,7 +115,7 @@ const Header = () => {
       )}
 
       {/* Menu desktop */}
-      <nav className="hidden lg:flex mt-3">
+      <nav className="hidden lg:flex mt-1 ml-7  tex-sm">
         <ul className="flex gap-4 list-none">
           <li><NavLink to="/">Home</NavLink></li>
           <li><NavLink to="/productlistingpage">Produtos</NavLink></li>

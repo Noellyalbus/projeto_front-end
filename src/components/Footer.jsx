@@ -56,18 +56,18 @@ const Footer = () => {
 
     return ( 
         <>
-            <footer>
-                <div>
-                    <div>
+            <footer className="bg-dark-gray text-white ">
+                <div className="grid">
+                    <div className="col-12 md:col-6 lg:col-3">
                         <Logo location={"footer"}/>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptate at dolore, amet est reiciendis, minus dicta dolor, repellendus sit ad. Culpa, nulla consequuntur, veniam voluptas magni doloremque beatae, deleniti vel error nam repellat aspernatur commodi porro necessitatibus aliquid saepe voluptatum non atque eos. Vitae.</p>
-                        <div>
+                        <div className="gap-3 col-12 md:col-6 lg:col-3">
                             <img src="../../assets/facebook.svg" alt="Facebook" />
                             <img src="../../assets/instagram.svg" alt="Instagram" />
                             <img src="../../assets/twitter.svg" alt="Twitter" />
                         </div>
                     </div>
-                    <div>
+                    <div className="col-12 md:col-6 lg:col-3">
                         {infoData.map((section, idx) =>(
                             <InfoCol key={idx} {...section}/>
                         ))}
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
 
                 <hr />
-                <p>&copy; 2024 Digital Store</p>
+                <p className="text-center mt-4">&copy; 2024 Digital Store</p>
             </footer>
         </>
      );
