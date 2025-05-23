@@ -1,5 +1,5 @@
 @import "primeicons/primeicons.css";
-@import "primeflex/primeflex.css";
+@import "tailwindcss";
 
 #root {
   margin: 0;
@@ -276,4 +276,9 @@ nav ul li a.active::after {
   height: 2px;
   background-color: var(--primary);
   transition: width 0.3s ease;
+}
+
+[class^="after:"]::after {
+  content: "";
+  display: block;
 }

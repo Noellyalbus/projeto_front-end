@@ -1,84 +1,87 @@
 import Logo from "./Logo";
 
-const InfoCol = ({title, info}) => {
-    return ( 
-        <div>
-            <h3> {title} </h3>
-            <ul>
-                {info.map((item, index) =>(
-                    <li key={index}>
-                        <a href={item.link}>
-                            {item.text}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </div>
-     );
-}
+const InfoCol = ({ title, info }) => {
+  return (
+    <div>
+      <h3 className="font-semibold text-lg mb-3">{title}</h3>
+      <ul className="space-y-2">
+        {info.map((item, index) => (
+          <li key={index}>
+            <a
+              href={item.link}
+              className="text-white hover:underline transition-colors duration-200 text-sm"
+            >
+              {item.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 const Footer = () => {
-    const infoData = [
+  const infoData = [
     {
-        title: "Informações",
-        info: [
+      title: "Informações",
+      info: [
         { text: "Sobre a Drip Store", link: "/about" },
         { text: "Segurança", link: "/security" },
         { text: "WishList", link: "/wishlist" },
         { text: "Blog", link: "/blog" },
         { text: "Trabalhe conosco", link: "/work_with_us" },
         { text: "Meus pedidos", link: "/my_orders" },
-        ],
+      ],
     },
     {
-        title: "Categorias",
-        info: [
+      title: "Categorias",
+      info: [
         { text: "Camisetas", link: "/tshirts" },
         { text: "Calças", link: "/pants" },
         { text: "Bonés", link: "/caps" },
         { text: "Headphones", link: "/headphones" },
         { text: "Tênis", link: "/sneakers" },
-        ],
+      ],
     },
     {
-        title: "Contatos",
-        info: [
+      title: "Contatos",
+      info: [
         {
-            text:
+          text:
             "Av. Santos Dumont, 1510 - 1° andar - Aldeota, Fortaleza - CE, 60150-161",
-            link: "#",
+          link: "#",
         },
         { text: "(85) 3051-3411", link: "#" },
-        ],
+      ],
     },
-    ];
+  ];
 
+  return (
+    <footer className="bg-dark-gray text-white px-6 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Logo + descrição + redes */}
+        <div className="space-y-4">
+          <Logo location="footer" />
+          <p className="text-white text-sm">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptate at dolore, amet est reiciendis, minus dicta dolor, repellendus sit ad.
+          </p>
+          <div className="flex gap-3 mt-4">
+            <img src="../../assets/facebook.svg" alt="Facebook" className="w-6 h-6" />
+            <img src="../../assets/instagram.svg" alt="Instagram" className="w-6 h-6" />
+            <img src="../../assets/twitter.svg" alt="Twitter" className="w-6 h-6" />
+          </div>
+        </div>
 
-    return ( 
-        <>
-            <footer className="bg-dark-gray text-white ">
-                <div className="grid">
-                    <div className="col-12 md:col-6 lg:col-3">
-                        <Logo location={"footer"}/>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptate at dolore, amet est reiciendis, minus dicta dolor, repellendus sit ad. Culpa, nulla consequuntur, veniam voluptas magni doloremque beatae, deleniti vel error nam repellat aspernatur commodi porro necessitatibus aliquid saepe voluptatum non atque eos. Vitae.</p>
-                        <div className="gap-3 col-12 md:col-6 lg:col-3">
-                            <img src="../../assets/facebook.svg" alt="Facebook" />
-                            <img src="../../assets/instagram.svg" alt="Instagram" />
-                            <img src="../../assets/twitter.svg" alt="Twitter" />
-                        </div>
-                    </div>
-                    <div className="col-12 md:col-6 lg:col-3">
-                        {infoData.map((section, idx) =>(
-                            <InfoCol key={idx} {...section}/>
-                        ))}
-                    </div>
-                </div>
+        {/* Colunas de informações */}
+        {infoData.map((section, idx) => (
+          <InfoCol key={idx} {...section} />
+        ))}
+      </div>
 
-                <hr />
-                <p className="text-center mt-4">&copy; 2024 Digital Store</p>
-            </footer>
-        </>
-     );
-}
- 
+      <hr className="my-8 border-light-gray-2" />
+      <p className="text-center text-white text-sm">&copy; 2024 Digital Store</p>
+    </footer>
+  );
+};
+
 export default Footer;
