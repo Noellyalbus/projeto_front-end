@@ -1,7 +1,10 @@
+import { Galleria } from "primereact/galleria";
+import CarouselHome from "../components/Gallery";
+
 const HomePage = () => {
     return ( 
         <>
-        <h1>Em breve...</h1>
+            <CarouselHome />
         </>
      );
 }
