@@ -282,3 +282,18 @@ nav ul li a.active::after {
   content: "";
   display: block;
 }
+
+.p-galleria .p-galleria-indicators .p-galleria-indicator button {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc !important;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.p-galleria .p-galleria-indicators .p-galleria-indicator.p-highlight button {
+  background-color: var(--primary) !important;
+  transform: scale(1.2);
+}
+
