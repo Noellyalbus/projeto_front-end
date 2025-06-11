@@ -1,10 +1,10 @@
 import CarouselHome from "../components/Gallery";
-import { BestSellersSection } from "../components/BestSellers";
+// import { BestSellersSection } from "../components/BestSellers";
 const HomePage = () => {
     return ( 
         <>
             <CarouselHome />
-            <BestSellersSection />
+            {/* <BestSellersSection /> */}
         </>
      );
 }

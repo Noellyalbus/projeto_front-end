@@ -13,8 +13,8 @@ function Paths() {
           <Route index element={<HomePage />} />
           <Route path="/products" element={<ProductListing />} />
           {/* <Route path="/productview" element={<ProductView />} /> */}
-          <Route path="*" element={<NotFound/>} />
         </Route>
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
   );

@@ -9,7 +9,7 @@ const InfoCol = ({ title, info }) => {
           <li key={index}>
             <a
               href={item.link}
-              className="text-white hover:underline transition-colors duration-200 text-sm"
+              className="text-gray-300 hover:underline transition-colors duration-200 text-sm"
             >
               {item.text}
             </a>
@@ -57,12 +57,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark-gray text-white px-6 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Logo + descrição + redes */}
+    <footer className="bg-gray-900 text-white px-6 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
+        {/* Logo + descrição + redes sociais */}
         <div className="space-y-4">
           <Logo location="footer" />
-          <p className="text-white text-sm">
+          <p className="text-gray-300 text-sm">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptate at dolore, amet est reiciendis, minus dicta dolor, repellendus sit ad.
           </p>
           <div className="flex gap-3 mt-4">
@@ -78,8 +78,8 @@ const Footer = () => {
         ))}
       </div>
 
-      <hr className="my-8 border-light-gray-2" />
-      <p className="text-center text-white text-sm">&copy; 2024 Digital Store</p>
+      <hr className="my-8 border-gray-700" />
+      <p className="text-center text-gray-400 text-sm">&copy; 2024 Digital Store</p>
     </footer>
   );
 };
