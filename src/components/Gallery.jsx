@@ -1,90 +1,121 @@
-import { Galleria } from 'primereact/galleria';
-import { Button } from 'primereact/button';
+import { useState, useEffect } from 'react';
 
 const images = [
   {
-    custom: true,
+    src: '/tenis-nike.png',
+    alt: 'Tênis Nike',
+    title: 'Queima de estoque Nike',
+    description: 'Sinta o conforto da nova linha Nike Air.',
+    bgcolor: '#D9D9D9',
   },
-  ...Array.from({ length: 8 }, (_, i) => ({
-    itemImageSrc: `/home-slide-${i + 1}.jpeg`,
-    alt: `Slide ${i + 1}`,
-  })),
+  {
+    src: '/tenis-kswis.png',
+    alt: 'Tênis K-Swiss',
+    title: 'Durabilidade Máxima',
+    description: 'O clássico da K-Swiss em nova edição.',
+    bgcolor: '#D9D9D9',
+  },
+  {
+    src: '/tenis-adidas.png',
+    alt: 'Tênis Adidas',
+    title: 'Energia nos Seus Passos',
+    description: 'Tecnologia Boost para mais performance.',
+    bgcolor: '#D9D9D9',
+  },
+  {
+    src: '/tenis-puma.png',
+    alt: 'Tênis Puma',
+    title: 'Design Moderno',
+    description: 'Puma Fusion: onde estilo encontra potência.',
+    bgcolor: '#D9D9D9',
+  },
 ];
 
-const itemTemplate = (item) => {
-  if (item.custom) {
-    return (
-      <section className="w-full min-h-[300px] sm:min-h-[400px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[681px] bg-light-gray-3">
+const Gallery = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
-        <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-20 py-10 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-0">
+  const changeImage = (index) => {
+    setFade(false);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setFade(true);
+    }, 300);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const nextIndex = (currentIndex + 1) % images.length;
+      changeImage(nextIndex);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
+
+  const setImage = (index) => {
+    if (index !== currentIndex) changeImage(index);
+  };
+
+  const current = images[currentIndex];
+
+  return (
+    <div className="w-full bg-light-gray-3 pt-8 xl:pt-12 px-4">
+      <div className="relative max-w-6xl mx-auto flex flex-col items-center">
+        
+        {/* Container de imagem + texto */}
+        <div className="flex flex-col-reverse xl:flex-col items-center w-full relative">
+
           {/* Texto promocional */}
-          <div className="w-full lg:w-[520px] flex flex-col gap-6 text-center lg:text-left z-10">
-            <span className="text-warning text-sm font-bold">
+          <div className="w-full xl:absolute xl:left-8 xl:top-6 z-10 max-w-sm text-center xl:text-left mt-4 xl:mt-0">
+            {/* Texto promocional */}
+            <span className='text-warning font-bold text-sm xl:text-base'>
               Melhores ofertas personalizadas
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[64px] font-extrabold text-dark-gray leading-tight tracking-wide">
-              Queima de estoque Nike 🔥
-            </h1>
-            <p className="text-sm sm:text-base text-dark-gray-2 leading-relaxed">
-              Consequat culpa exercitation mollit nisi excepteur do do tempor
-              laboris eiusmod irure consectetur.
-            </p>
-            <div className="flex justify-center lg:justify-start">
-              <Button
-                className="w-full sm:w-[220px] h-11 rounded-none font-bold text-light-gray-3 bg-primary"
-                label="Ver Ofertas"
-              />
-            </div>
+            <h2 className="text-2xl xl:text-4xl font-bold mt-1">{current.title}</h2>
+            <p className="text-base xl:text-lg text-dark-gray-2 mt-1 font-medium">{current.description}</p>
+           <button className="bg-primary hover:bg-primary/80 text-white font-bold mt-3 py-2 px-5 rounded transition-colors duration-300">
+            Ver coleção
+            </button>
+
           </div>
 
-          {/* Imagens decorativas */}
-          <div className="relative w-full max-w-[500px] lg:max-w-[700px] aspect-[4/3]">
+          {/* Imagem principal */}
+          <div className="relative w-full h-[18rem] sm:h-[22rem] xl:h-[26rem] flex items-center justify-center overflow-hidden">
             <img
-              className="absolute w-20 sm:w-28 top-0 right-0 z-0"
-              alt="Ornament"
-              src="/assets/Ornament 11.png"
+              src={current.src}
+              alt={current.alt}
+              className={`transition-opacity duration-300 pl-6 sm:pl-10 xl:pl-28 pr-6 max-h-full transform -rotate-[18deg] ${
+                fade ? 'opacity-100' : 'opacity-0'
+              }`}
             />
+            
+            {/* Imagem ornament */}
             <img
-              className="absolute top-1/2 left-1/2 w-full h-full object-contain -translate-x-1/2 -translate-y-1/2 z-0"
-              alt="White Nike Sneakers"
-              src="/White-Sneakers-PNG-Clipart 1.png"
+              src="/assets/Ornament 11.png"
+              alt="Ornamento"
+              className="absolute top-6 right-6 w-14 sm:w-20 xl:w-28 z-10"
             />
           </div>
         </div>
-      </section>
-    );
-  }
 
-  return (
-    <img
-      src={item.itemImageSrc}
-      alt={item.alt}
-      className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[681px] object-cover"
-    />
+        {/* Indicadores */}
+        <div className="mt-6 flex gap-2 xl:gap-3">
+          {images.map((img, idx) => (
+            <button
+              key={idx}
+              onClick={() => setImage(idx)}
+              className={`w-4 h-4 xl:w-5 xl:h-5 rounded-full border-2 transition-all ${
+                idx === currentIndex
+                  ? 'bg-pink-600 border-pink-600'
+                  : 'bg-transparent border-gray-400'
+              }`}
+              aria-label={`Selecionar imagem ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
-const HomeCarousel = () => {
-  return (
-    <section className="w-full relative">
-      <Galleria
-        value={images}
-        style={{ width: '100%' }}
-        showThumbnails={false}
-        showIndicators
-        circular
-        autoPlay
-        transitionInterval={3000}
-        item={itemTemplate}
-        pt={{
-          indicators: {
-            className:
-              'absolute bottom-0 left-1/2 -translate-x-1/2 flex gap-2 z-20 ',
-          },
-        }}
-      />
-    </section>
-  );
-};
-
-export default HomeCarousel;
+export default Gallery;
