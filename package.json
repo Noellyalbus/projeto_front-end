@@ -15,7 +15,6 @@
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "primeicons": "^7.0.0",
-    "primereact": "^10.9.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0"
