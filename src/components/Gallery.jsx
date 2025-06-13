@@ -4,7 +4,7 @@ const images = [
   {
     src: '/tenis-nike.png',
     alt: 'Tênis Nike',
-    title: 'Queima de estoque Nike',
+    title: 'Queima de estoque Nike 🔥',
     description: 'Sinta o conforto da nova linha Nike Air.',
     bgcolor: '#D9D9D9',
   },
