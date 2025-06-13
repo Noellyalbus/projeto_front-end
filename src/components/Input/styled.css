@@ -1,0 +1,40 @@
+.input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  background-color: var(--light-gray-3);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--light-gray-2);
+  }
+  &:focus-within {
+    outline: none;
+    background-color: var(--light-gray-2);
+    border-color: var(--primary);
+  }
+    &::placeholder {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.75px;
+    }
+      &:user-invalid + .error {
+      display: block;
+      visibility: visible;
+      color: var(--error);
+      font-size: small;
+      margin-top: 0.25rem;
+    }
+
+  }
+  .error {
+      display: none;
+      visibility: hidden;
+    }
+
+  
+   
