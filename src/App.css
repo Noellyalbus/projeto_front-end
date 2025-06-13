@@ -309,33 +309,7 @@ nav ul li a.active::after {
   transform: scale(1.2);
 }
 
-.btn-secondary {
-  width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  width: 6.5rem;
-  height: 2.5rem;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  background-color: var(--secondary);
-  color: var(--primary);
 
-  &:hover {
-    background-color: var(--hover-secondary);
-    color: var(--white);
-  }
-  &:disabled {
-    background: var(--disabled-secondary);
-    color: var(--primary);
-    border: 1px solid transparent;
-    border-color: var(--primary);
-    cursor: not-allowed;
-  }
-}
 
 .input {
   width: auto;

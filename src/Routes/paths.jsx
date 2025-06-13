@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "../layouts/PagesLayout";
 import NotFound from "../pages/NotFound";
 import HomePage from "../pages/HomePage";
+import PageTeste from "../pages/PageTeste";
 // import ProductListing from "../pages/ProductListingPage";
 // import ProductView from "../pages/ProductViewPage";
 
@@ -13,6 +14,7 @@ function Paths() {
           <Route index element={<HomePage />} />
           {/* <Route path="/products" element={<ProductListing />} /> */}
           {/* <Route path="/productview" element={<ProductView />} /> */}
+          <Route path="/teste" element={<PageTeste />} />
         </Route>
         <Route path="*" element={<NotFound/>} />
       </Routes>
