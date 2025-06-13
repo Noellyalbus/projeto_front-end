@@ -4,11 +4,8 @@ import BestSellersSection from "../components/BestSellers";
 
 const HomePage = () => {
   return (
-    <main className="bg-light-gray-3">
-      <Section>
+    <main>
         <CarouselHome />
-      </Section>
-
       {/*Seções futuras */}
       
       <Section>

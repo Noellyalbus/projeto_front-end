@@ -59,7 +59,7 @@ const Gallery = () => {
   const current = images[currentIndex];
 
   return (
-    <div className="w-full bg-light-gray-3 pt-8 xl:pt-12 px-4">
+    <div className="w-full bg-light-gray-3 pt-8 pb-8 xl:pt-12 px-4">
       <div className="relative max-w-6xl mx-auto flex flex-col items-center">
         
         {/* Container de imagem + texto */}
@@ -71,20 +71,22 @@ const Gallery = () => {
             <span className='text-warning font-bold text-sm xl:text-base'>
               Melhores ofertas personalizadas
             </span>
-            <h2 className="text-2xl xl:text-4xl font-bold mt-1">{current.title}</h2>
+            <h2 className="text-2xl xl:text-6xl font-bold mt-1">{current.title}</h2>
             <p className="text-base xl:text-lg text-dark-gray-2 mt-1 font-medium">{current.description}</p>
-           <button className="btn-primary mt-3 py-2 px-5 w-[220px]">
-            Ver coleção
-            </button>
+            <div className="flex justify-center xl:justify-start">
+              <button className="btn-primary mt-3 w-[220px]">
+                Ver coleção
+              </button>
+            </div>
 
           </div>
 
           {/* Imagem principal */}
-          <div className="relative w-full h-[18rem] sm:h-[22rem] xl:h-[26rem] flex items-center justify-center overflow-hidden">
+          <div className="relative w-full h-[18rem] sm:h-[22rem] xl:h-[26rem] flex items-center justify-center overflow-hidden gap-6 xl:gap-x-12">
             <img
               src={current.src}
               alt={current.alt}
-              className={`transition-opacity duration-300 pl-6 sm:pl-10 xl:pl-28 pr-6 max-h-full transform -rotate-[18deg] ${
+              className={`transition-opacity duration-300 pl-6 sm:pl-10 xl:pl-28 pr-6 max-h-full transform -rotate-[18deg] z-10 ${
                 fade ? 'opacity-100' : 'opacity-0'
               }`}
             />
@@ -93,7 +95,7 @@ const Gallery = () => {
             <img
               src="/assets/Ornament 11.png"
               alt="Ornamento"
-              className="absolute top-6 right-6 w-14 sm:w-20 xl:w-28 z-10"
+              className="absolute top-6 right-6 w-20 sm:w-20 xl:w-28 z-0"
             />
           </div>
         </div>
