@@ -4,8 +4,7 @@ function Button({ variant, ...props }) {
     const validVariants = ['primary', 'secondary', 'tertiary'];
     const safeVariant = validVariants.includes(variant) ? variant : 'primary';
 
-    const className = `btn-${safeVariant} ${props.className}`.trim();
-    console.log('Button className:', className);
+    const className = `btn-${safeVariant} ${props.className ?? ''}`.trim();
 
     return (
         <>
