@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 const collections = [
   {
     image: "/collection-1.png",
-    link: "/produtos/categoria/masculino",
+    link: "/produtos/categoria",
     badge: "30% OFF",
   },
   {
     image: "/collection-2.png",
-    link: "/produtos/categoria/feminino",
+    link: "/produtos/categoria/tenis",
     badge: "30% OFF",
   },
   {
     image: "/collection-3.png",
-    link: "/produtos/categoria/infantil",
+    link: "/produtos/categoria",
     badge: "30% OFF",
   },
 ];
