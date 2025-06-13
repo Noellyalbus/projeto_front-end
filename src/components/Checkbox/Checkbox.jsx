@@ -1,5 +1,5 @@
 
-import './styled.css';
+
 import checked from '../../../assets/Checked.svg';
 function Checkbox({ label, ...props }) {
     return (
