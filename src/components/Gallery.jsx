@@ -73,7 +73,7 @@ const Gallery = () => {
             </span>
             <h2 className="text-2xl xl:text-4xl font-bold mt-1">{current.title}</h2>
             <p className="text-base xl:text-lg text-dark-gray-2 mt-1 font-medium">{current.description}</p>
-           <button className="bg-primary hover:bg-primary/80 text-white font-bold mt-3 py-2 px-5 rounded transition-colors duration-300">
+           <button className="btn-primary mt-3 py-2 px-5 w-[220px]">
             Ver coleção
             </button>
 

@@ -66,12 +66,12 @@ const Header = () => {
                 >
                   Cadastre-se
                 </NavLink>
-                <NavLink
+                <button
                   to="/login"
-                  className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-3 py-2 rounded transition-colors duration-300"
+                  className="btn-primary px-3 py-2 w-[114px]"
                 >
                   Entrar
-                </NavLink>
+                </button>
               </div>
 
               {/* Carrinho */}
@@ -147,13 +147,13 @@ const Header = () => {
               </div>
 
               <div className="flex flex-col gap-3">
-                <NavLink
+                <button
                   to="/login"
-                  className="bg-pink-600 hover:bg-pink-700 text-white font-bold px-4 py-3 rounded text-center transition-colors duration-300 text-base"
+                  className="btn-primary px-4 py-3"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Entrar
-                </NavLink>
+                </button>
                 <NavLink
                   to="/register"
                   className="underline text-gray-700 hover:text-pink-600 font-normal text-center transition-colors duration-300 text-base"

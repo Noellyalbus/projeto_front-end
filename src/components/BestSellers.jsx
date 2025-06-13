@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 const collections = [
   {
     image: "/collection-1.png",
-    link: "/produtos/categoria/masculino",
+    link: "/produtos/categoria/",
     badge: "30% OFF",
   },
   {
     image: "/collection-2.png",
-    link: "/produtos/categoria/feminino",
+    link: "/produtos/categoria/tenis",
     badge: "30% OFF",
   },
   {
     image: "/collection-3.png",
-    link: "/produtos/categoria/infantil",
+    link: "/produtos/categoria/",
     badge: "30% OFF",
   },
 ];
@@ -47,8 +47,8 @@ const BestSellers = () => {
             />
 
             {/* Botão na lateral esquerda */}
-            <button className="btn-secondary absolute bottom-4 left-4 max-w-[150px] text-[16px] font-bold leading-6 tracking-[0.75px]">
-              Ver coleção
+            <button className="btn-secondary absolute px-5 py-2 bottom-4 left-4 w-[153px] font-bold leading-6 tracking-[0.75px]">
+              Comprar
             </button>
           </Link>
         ))}
