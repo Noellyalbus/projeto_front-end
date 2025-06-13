@@ -1,6 +1,6 @@
 
 
-import checked from '../../../assets/Checked.svg';
+import checked from '../../../assets/checkbox-checked.svg';
 function Checkbox({ label, ...props }) {
     return (
         <label class="relative flex items-center cursor-pointer space-x-2 ">
