@@ -137,7 +137,7 @@ const Header = () => {
                         <div className="flex justify-between items-center">
                           <a className="text-dark-gray-2 text-sm underline" >Esvaziar</a>
 
-                          <Button className={' px-2 '} onClick={() => setIsCarrinhoOpen(false)} ><NavLink to={'\carrinho'}><span className="text-sm text-light-3 font-bold">Ver Carrinho</span></NavLink></Button>
+                          <Button className={' px-2 '} onClick={() => setIsCarrinhoOpen(false)} ><NavLink to={'/carrinho'}><span className="text-sm text-light-3 font-bold">Ver Carrinho</span></NavLink></Button>
                         </div>
                       </div>
 
