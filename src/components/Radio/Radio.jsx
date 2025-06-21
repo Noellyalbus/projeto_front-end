@@ -8,7 +8,7 @@ function Radio({ label, ...props }) {
             </div>
             <img src={checked} alt="radio" className="w-5 h-5 absolute opacity-0 peer-checked:opacity-100 transition-opacity" />
            
-            <span className='text-sm text-(--dark-gray-2)'>{label}</span>
+            <span className='text-sm text-dark-gray-2'>{label}</span>
 
         </label>
 
