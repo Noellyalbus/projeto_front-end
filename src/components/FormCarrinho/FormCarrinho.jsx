@@ -95,13 +95,13 @@ const FormCarrinho = ({onSubmit}) => {
 
 
 
-                    <div className="flex flex-wrap flex-col lg:flex-row gap-4 lg:gap-0  lg:bg-white   ">
+                    <div className="flex  flex-col lg:flex-row gap-4 lg:gap-0  lg:bg-white   ">
                         <div className="flex flex-col lg:flex-row   lg:py-5 p-8 gap-2.5 bg-white shadow lg:shadow-none rounded-sm lg:rounded-none">
                             <div className="flex flex-col">
                                 <label htmlFor="codigo" className="text-xs text-dark-gray-2 font-bold cursor-text">Cupom de desconto</label>
                                 <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 space-x-0 lg:space-x-2">
 
-                                    <Input id='codigo' className='h-14  lg:w-72' type="text" placeholder="Insira seu código"{...register('codigo') }/>
+                                    <Input id='codigo' className='h-14 ' type="text" placeholder="Insira seu código"{...register('codigo') }/>
                                     <Button variant="secondary" type='button' onClick={(e)=> console.log('Insira codigo')} className='h-14 lg:w-28'   > <span className="text-sm font-bold">OK</span></Button>
                                 </div>
                             </div>
@@ -113,7 +113,7 @@ const FormCarrinho = ({onSubmit}) => {
                             <div className="flex flex-col">
                                 <label htmlFor="codigo-cep" className="text-xs text-dark-gray-2 font-bold cursor-text">Calcular frete</label>
                                 <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 space-x-0 lg:space-x-2">
-                                    <Input id='codigo-cep' className='h-14  lg:w-72' type="text" placeholder="Insira seu CEP" {...register('cep') } />
+                                    <Input id='codigo-cep' className='h-14  ' type="text" placeholder="Insira seu CEP" {...register('cep') } />
                                     <Button variant="secondary" type='button' onClick={()=> console.log('Calcular Frete')
                                     } className='h-14 lg:w-28'   > <span className="text-sm font-bold">OK</span></Button>
 
