@@ -13,14 +13,14 @@ const Header = () => {
     <>
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-60 z-[50] lg:hidden"
+          className="fixed inset-0 bg-dark-gray-3 bg-opacity-60 z-[50] lg:hidden"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
       <header className="bg-white fixed w-full top-0 left-0 z-[60] shadow-sm">
-        <div className="container mx-auto my-4 px-4 max-w-[1440px]">
+        <div className=" mx-auto my-5 px-5 max-w-[75rem]">
           {/* Primeira linha (logo e ações) */}
-          <div className="flex items-center justify-between h-[60px]">
+          <div className="flex items-center sm:justify-between h-[60px]">
             {/* Botão menu mobile */}
             <div className="lg:hidden">
               <button
@@ -37,7 +37,7 @@ const Header = () => {
             </div>
 
             {/* Campo de busca desktop */}
-            <div className="hidden lg:flex relative w-full h-[40px] max-w-lg">
+            <div className="hidden lg:flex relative w-full h-[3rem] max-w-lg">
               <input
                 type="text"
                 placeholder="Pesquisar produto..."
@@ -78,7 +78,7 @@ const Header = () => {
 
               {/* Carrinho */}
            
-                <div className="relative  ml-2 " >
+                <div className="relative  mr-5 " >
                   <div className="cursor-pointer" onClick={() => setIsCarrinhoOpen(!isCarrinhoOpen)}>
                     <i className="pi pi-shopping-cart text-xl text-gray-700 hover:text-pink-600 transition-colors duration-300"></i>
                     <div className="absolute -top-2 -right-2 bg-pink-600 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
@@ -137,7 +137,7 @@ const Header = () => {
                         <div className="flex justify-between items-center">
                           <a className="text-dark-gray-2 text-sm underline" >Esvaziar</a>
 
-                          <Button className={' px-2 '} onClick={() => setIsCarrinhoOpen(false)} ><NavLink to={'\carrinho'}><span className="text-sm text-light-3 font-bold">Ver Carrinho</span></NavLink></Button>
+                          <Button className={' px-2 '} onClick={() => setIsCarrinhoOpen(false)} ><NavLink to={'/carrinho'}><span className="text-sm text-light-3 font-bold">Ver Carrinho</span></NavLink></Button>
                         </div>
                       </div>
 
@@ -167,7 +167,7 @@ const Header = () => {
 
           {/* Menu mobile */}
           <div
-            className={`fixed top-[60px] left-0 h-[calc(100vh-60px)] w-[280px] bg-white z-50 transform transition-transform duration-300 ease-in-out ${
+            className={`fixed left-0 h-[calc(100vh-60px)] w-[280px] bg-white z-50 transform transition-transform duration-300 ease-in-out ${
               isMenuOpen ? "translate-x-0" : "-translate-x-full"
               } lg:hidden`}
           >
@@ -236,8 +236,8 @@ const Header = () => {
           </div>
 
           {/* Menu horizontal desktop*/}
-          <nav className="hidden lg:flex border-t border-gray-200 z-10">
-            <div className="container mx-auto px-4">
+          <nav className="hidden lg:flex z-10">
+            <div className="container mx-auto">
               <ul className="flex overflow-x-auto whitespace-nowrap gap-8 py-3">
                 <li>
                   <NavLink

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+
 const images = [
   {
     src: '/tenis-nike.png',
@@ -60,7 +61,7 @@ const Gallery = () => {
 
   return (
     <div className="w-full bg-light-gray-3 pt-8 pb-8 xl:pt-12 px-4">
-      <div className="relative max-w-6xl mx-auto flex flex-col items-center">
+      <div className="relative max-w-[75rem] mx-auto flex flex-col items-center">
         
         {/* Container de imagem + texto */}
         <div className="flex flex-col-reverse xl:flex-col items-center w-full relative">
@@ -82,11 +83,11 @@ const Gallery = () => {
           </div>
 
           {/* Imagem principal */}
-          <div className="relative w-full h-[18rem] sm:h-[22rem] xl:h-[26rem] flex items-center justify-center overflow-hidden gap-6 xl:gap-x-12">
+          <div className="relative w-full h-[18rem] sm:h-[22rem] xl:h-[26rem] flex items-center justify-center overflow-hidden gap-8 xl:gap-x-12">
             <img
               src={current.src}
               alt={current.alt}
-              className={`transition-opacity duration-300 pl-6 sm:pl-10 xl:pl-28 pr-6 max-h-full transform -rotate-[18deg] z-10 ${
+              className={`absolute transition-opacity right-12 lg:right-40 duration-300 pl-6 sm:pl-10 xl:pl-50 max-h-full transform -rotate-[18deg] z-10 ${
                 fade ? 'opacity-100' : 'opacity-0'
               }`}
             />
@@ -95,7 +96,7 @@ const Gallery = () => {
             <img
               src="/assets/Ornament 11.png"
               alt="Ornamento"
-              className="absolute top-6 right-6 w-20 sm:w-20 xl:w-28 z-0"
+              className="absolute top-5 right-5 w-[140px] sm:w-[140px] xl:w-[140px] z-0"
             />
           </div>
         </div>

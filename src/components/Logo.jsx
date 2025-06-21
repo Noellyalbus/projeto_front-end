@@ -4,8 +4,8 @@ import classNames from "classnames";
 
 const Logo = ({ location }) => {
   const logoClass = classNames({
-    "w-15rem h-3rem ml-5": location === "header", // 240x48px aproximado
-    "w-7rem h-2.5rem border-round-sm": location === "footer", // 112x40px aproximado
+    "w-16rem h-3rem": location === "header",
+    "w-7rem h-2.5rem border-round-sm": location === "footer",
   });
 
   return (

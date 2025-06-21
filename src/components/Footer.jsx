@@ -58,7 +58,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-dark-gray text-white px-6 py-10">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-[1440px] mx-auto">
+      <div className="max-w-[75rem] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-8 mx-auto">
         {/* Logo + descrição + redes sociais */}
         <div className="space-y-4">
           <Logo location="footer" />

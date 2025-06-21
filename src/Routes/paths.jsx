@@ -15,7 +15,7 @@ function Paths() {
           <Route index element={<HomePage />} />
           <Route path="/carrinho" element={<CarrinhoPage/>} />
           {/* <Route path="/products" element={<ProductListing />} /> */}
-          {/* <Route path="/productview" element={<ProductView />} /> */}
+          {/* <Route path="/products/productview" element={<ProductView />} /> */}
           {/* <Route path="/Login" element={<LoginPage/>} /> */}
           <Route path="/teste" element={<PageTeste />} />
         </Route>

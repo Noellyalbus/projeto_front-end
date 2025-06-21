@@ -1,32 +1,67 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Section = ({ title, titleAlign = 'left', link, children }) => {
-  const alignClass = {
-    left: 'items-start text-left',
-    center: 'items-center text-center',
-    right: 'items-end text-right',
-  }[titleAlign];
+const Section = ({
+  sectionMt = 2,
+  sectionMb = 2,
+  titleMb = 2,
+  title,
+  titleAlign = 'between',
+  link,
+  className = '',
+  children
+}) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const justifyMap = {
+    left: 'justify-start',
+    center: 'justify-center',
+    right: 'justify-end',
+    between: 'justify-between'
+  };
+
+  const justifyContentClass = justifyMap[titleAlign] || 'justify-start';
 
   return (
-    <section className="w-full px-4 lg:px-6 py-10">
-      {title && (
-        <div className={`flex flex-col ${alignClass} mb-6`}>
-          <h2 className="text-2xl lg:text-3xl font-bold text-dark-gray">{title}</h2>
-          {link && (
-            <NavLink
-              to={link}
-              className="text-primary mt-2 text-sm font-medium hover:underline transition-colors"
-            >
-              Ver todos
-            </NavLink>
-          )}
-        </div>
-      )}
+    <section
+      className={className}
+      style={{
+        marginTop: isMobile ? `calc(${sectionMt}rem / 2)` : `${sectionMt}rem`,
+        marginBottom: isMobile ? `calc(${sectionMb}rem / 2)` : `${sectionMb}rem`,
+      }}
+    >
+      <div className="max-w-[75rem] mx-auto p-3">
+        {title && (
+          <div
+            className={`flex items-center ${justifyContentClass}`}
+            style={{ marginBottom: `${titleMb}rem` }}
+          >
+            <h2 className="text-2xl lg:text-3xl font-bold text-dark-gray-2 m-0">
+              {title}
+            </h2>
 
-      {/* Conteúdo da seção */}
-      <div className="w-full">
-        {children}
+            {link && (
+              <NavLink
+                to={typeof link === 'object' ? link.href : link}
+                className="text-primary flex items-center text-sm font-bold hover:underline transition-colors"
+              >
+                <span>{typeof link === 'object' ? link.text : 'Ver todos'}</span>
+                <i className="pi pi-arrow-right ml-2"></i>
+              </NavLink>
+            )}
+          </div>
+        )}
+
+        <div className="w-full">
+          {children}
+        </div>
       </div>
     </section>
   );
