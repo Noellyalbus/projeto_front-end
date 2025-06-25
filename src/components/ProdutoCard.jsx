@@ -23,7 +23,7 @@ const ProductCard = ({ id, badge, name, image, category, price, price2 }) => {
         </div>
 
         {/* Informações do produto */}
-        <div className="bg-gray-100 p-4 pb-6">
+        <div className="bg-(--white-background) p-4 pb-6">
           <h3 className="text-sm font-semibold text-gray-500 mb-1">
             {category?.name || category}
           </h3>

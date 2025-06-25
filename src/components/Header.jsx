@@ -187,7 +187,7 @@ const Header = () => {
                     </li>
                     <li>
                       <NavLink
-                        to="/products"
+                        to="/produtos"
                         onClick={() => setIsMenuOpen(false)}
                         className="text-gray-700 hover:text-pink-600 transition-colors text-base"
                       >
@@ -249,7 +249,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/products"
+                    to="/produtos"
                     className="hover:text-pink-600 transition-colors"
                   >
                     Produtos

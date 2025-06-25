@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage";
 import PageTeste from "../pages/PageTeste";
 import CarrinhoPage from "../pages/CarrinhoPage";
 import CarrinhoCompraConfirme from "../pages/CarrinhoCompra";
-// import ProductListing from "../pages/ProductListingPage";
+import ProductListingPage from "../pages/ProductListingPage";
 // import ProductView from "../pages/ProductViewPage";
 
 function Paths() {
@@ -16,7 +16,7 @@ function Paths() {
           <Route index element={<HomePage />} />
           <Route path="/carrinho" element={<CarrinhoPage/>} />
           <Route path="/carrinho/confirme" element={<CarrinhoCompraConfirme/>} />
-          {/* <Route path="/products" element={<ProductListing />} /> */}
+          <Route path="/produtos" element={<ProductListingPage />} />
           {/* <Route path="/products/productview" element={<ProductView />} /> */}
           {/* <Route path="/Login" element={<LoginPage/>} /> */}
           <Route path="/teste" element={<PageTeste />} />
