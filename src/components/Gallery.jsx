@@ -29,6 +29,10 @@ const images = [
     description: 'Puma Fusion: onde estilo encontra potência.',
     bgcolor: '#D9D9D9',
   },
+  {
+    src: '/shoes.png'
+  }
+
 ];
 
 const Gallery = () => {
