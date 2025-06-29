@@ -7,9 +7,12 @@ import CarrinhoPage from "../pages/CarrinhoPage";
 import CarrinhoCompraConfirme from "../pages/CarrinhoCompra";
 import LoginPage from "../pages/LoginPage";
 import CreateAccPage from "../pages/CreateAccPage";
-import LoginLayout from "../layouts/LoginLayout";
+import LayoutLogin from "../layouts/LayoutLogin";
 // import ProductListing from "../pages/ProductListingPage";
 // import ProductView from "../pages/ProductViewPage";
+
+// Removi import de LoginLayout, pois o arquivo não existe
+// import LoginLayout from "../layouts/LoginLayout";
 
 function Paths() {
   return (
@@ -17,25 +20,22 @@ function Paths() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/carrinho" element={<CarrinhoPage/>} />
-          <Route path="/carrinho/confirme" element={<CarrinhoCompraConfirme/>} />
+          <Route path="/carrinho" element={<CarrinhoPage />} />
+          <Route path="/carrinho/confirme" element={<CarrinhoCompraConfirme />} />
           {/* <Route path="/products" element={<ProductListing />} /> */}
           {/* <Route path="/productview" element={<ProductView />} /> */}
-          {/* <Route path="/products/productview" element={<ProductView />} /> */}
-          {/* <Route path="/Login" element={<LoginPage/>} /> */}
           <Route path="/teste" element={<PageTeste />} />
         </Route>
 
-        <Route element={<LoginLayout />}>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<CreateAccPage />} />
-        </Route>
-        
-        
+     <Route element={<LayoutLogin />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<CreateAccPage />} />
+     </Route>
+
         <Route path="*" element={<NotFound />} />
-        <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
+
   );
 }
 
