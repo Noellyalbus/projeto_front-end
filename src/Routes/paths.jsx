@@ -4,7 +4,7 @@ import NotFound from "../pages/NotFound";
 import HomePage from "../pages/HomePage";
 import PageTeste from "../pages/PageTeste";
 import CarrinhoPage from "../pages/CarrinhoPage";
-import LoginTeste from "../pages/LoginTeste";
+import LoginPage from "../pages/LoginPage";
 import CreateAccPage from "../pages/CreateAccPage";
 import LoginLayout from "../layouts/LoginLayout";
 // import ProductListing from "../pages/ProductListingPage";
@@ -19,13 +19,11 @@ function Paths() {
           <Route path="/carrinho" element={<CarrinhoPage />} />
           {/* <Route path="/products" element={<ProductListing />} /> */}
           {/* <Route path="/productview" element={<ProductView />} /> */}
-          {/* <Route path="/login" element={<LoginTeste />} />
-          <Route path="/register" element={<CreateAccPage />} /> */}
           <Route path="/teste" element={<PageTeste />} />
         </Route>
 
         <Route element={<LoginLayout />}>
-          <Route path="/login" element={<LoginTeste />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<CreateAccPage />} />
         </Route>
         

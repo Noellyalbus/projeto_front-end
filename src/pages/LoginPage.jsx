@@ -5,7 +5,7 @@ import Input from "../components/Input/Input";
 import { Link } from 'react-router-dom';
 
 
-const LoginTeste = () => {
+const LoginPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
     const navigate = useNavigate();
@@ -267,4 +267,4 @@ const LoginTeste = () => {
     );
 }
 
-export default LoginTeste;
+export default LoginPage;

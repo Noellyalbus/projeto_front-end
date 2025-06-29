@@ -93,7 +93,7 @@ const CreateAccount = () => {
                                     </span>
 
                                     <Link
-                                        to="/register"
+                                        to="/login"
                                         className="
                                     underline 
                                     text-3xl !important                                  

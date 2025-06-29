@@ -27,10 +27,7 @@ const images = [
     alt: 'Tênis Puma',
     title: 'Design Moderno',
     description: 'Puma Fusion: onde estilo encontra potência.',
-    bgcolor: '#D9D9D9',
-  },
-  {
-    src: '/shoes.png'
+    bgcolor: '#D9D9D9'
   }
 
 ];
