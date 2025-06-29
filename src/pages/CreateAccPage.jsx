@@ -4,10 +4,8 @@ import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
 import { Link } from 'react-router-dom';
 
-
-const LoginPage = () => {
+const CreateAccount = () => {
     const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("")
     const navigate = useNavigate();
     return (
 
@@ -17,7 +15,7 @@ const LoginPage = () => {
                 className="
                 min-h-screen 
                 w-full 
-                flex  
+                flex                  
                 justify-center 
                 items-center 
                 px-4 
@@ -25,8 +23,8 @@ const LoginPage = () => {
                 bg-gradient-to-b 
                 from-[#b5b6f2] 
                 via-[#b5b6f2] 
-                to-[#E2E3FF]
-                "
+                to-[#E2E3FF]"
+
             >
 
                 <div className="
@@ -36,13 +34,13 @@ const LoginPage = () => {
                 grid-cols-1 
                 lg:grid-cols-2
                 gap-6 
-                itens-start">
+                items-start">
 
 
                     <div className="
                     flex 
-                    justify-center
-                    items-center
+                    justify-center 
+                    items-center 
                     lg:justify-start
                     lg:items-start
                     md:mt-24">
@@ -50,30 +48,30 @@ const LoginPage = () => {
 
                         <form className=" 
                         w-full
-                        md:min-w-[580px]
-                        max-w-[720px] 
+                        md:min-w-[500px]
+                        max-w-[720px]
+                        min-h-[380px] 
                         h-auto  
                         p-6 flex 
                         flex-col 
                         justify-start 
                         space-y-8
-                      bg-white
+                      bg-white 
                         rounded shadow-lg
                        "
                         >
 
                             <div className="space-y-3">
 
-                                {/* Formulário */}
                                 <div className="
-                                text-2xl
-                                lg:text-3xl 
+                                text-3xl 
                                 font-bold 
                                 tracking-[1px] 
                                 flex
                                 justify-center
-                                lg:justify-start">
-                                    Acesse sua conta
+                                lg:justify-start 
+                                ">
+                                    Criar sua conta
                                 </div>
 
 
@@ -87,13 +85,15 @@ const LoginPage = () => {
                                 justify-center
                                 lg:justify-start
                                 space-x-1
-                                items-center">
+                                items-center
+                                ">
+
                                     <span>
                                         Novo cliente? Então registre-se{' '}
                                     </span>
 
                                     <Link
-                                        to="/register"
+                                        to="/login"
                                         className="
                                     underline 
                                     text-3xl !important                                  
@@ -107,7 +107,8 @@ const LoginPage = () => {
                             </div>
 
 
-                            <div className="flex flex-col gap-1.5 space-y-3">
+                            {/* Formulário */}
+                            <div className="flex flex-col gap-1.5">
 
                                 <div className="flex flex-col ">
                                     <label
@@ -117,7 +118,7 @@ const LoginPage = () => {
                                         text-dark-gray-2 
                                         font-bold 
                                         cursor-text">
-                                        Login *
+                                        Email *
                                     </label>
                                 </div>
 
@@ -128,50 +129,11 @@ const LoginPage = () => {
                                     value={email}
                                     required
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Insira seu login ou email"
+                                    placeholder="Insira seu email"
                                     type="email"
-
-
-                                />
-                                <label
-                                    htmlFor="password"
-                                    className="
-                                    text-xs 
-                                    text-dark-gray-2 
-                                    font-bold 
-                                    cursor-text">
-                                    Senha *
-                                </label>
-
-                                <Input
-                                    label="password*"
-                                    id="password"
-                                    value={password}
-                                    required
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    placeholder="Insira sua senha"
-                                    type="password"
-
                                 />
 
 
-                            </div>
-
-
-                            <div className="
-                            text-sm 
-                            text-dark-gray-2
-                            tracking-[0.25px] 
-                            font-medium 
-                            underline 
-                            hover:text-pink-600 
-                            transition-colors 
-                            duration-300">
-
-                                <Link
-                                    to={'/404'}>
-                                    Esqueci minha senha
-                                </Link>
                             </div>
 
 
@@ -179,9 +141,8 @@ const LoginPage = () => {
                                 className={"px-[55px] py-2 flex"}
                                 variant="primary"
                                 type="submit">
-                                Acessar Conta
+                                Criar Conta
                             </Button>
-
 
 
                             <div className="
@@ -193,16 +154,15 @@ const LoginPage = () => {
                             flex-col
                             lg:flex-row
                             gap-5 
-                            items-center">
+                            items-center
+                            ">
+                                Ou faça login com
 
-                                <span>
-                                    Ou faça login com
-                                </span>
 
+                                {/* Icones de login */}
                                 <div className="
                                 flex
-                                space-x-5">
-                                    {/* Icones de login */}
+                                space-x-6">
                                     <Link to={'/404'}>
                                         <img
                                             src="./gmail.png"
@@ -233,7 +193,6 @@ const LoginPage = () => {
                     col-span-1 
                     ">
 
-
                         <div className="
                         relative 
                         w-full 
@@ -243,7 +202,6 @@ const LoginPage = () => {
                         items-start 
                         overflow-visible">
 
-
                             <div className="relative mt-10 min-w-[300px] max-w-[50%]">
                                 <img
                                     src="./shoesE.png"
@@ -252,7 +210,7 @@ const LoginPage = () => {
                             </div>
 
 
-                            <div className="relative -ml-2 mt-66">
+                            <div className="relative -ml-4 mt-56">
                                 <img
                                     src="./shoesD.png"
                                     alt="ShoesD"
@@ -267,4 +225,4 @@ const LoginPage = () => {
     );
 }
 
-export default LoginPage;
+export default CreateAccount;
