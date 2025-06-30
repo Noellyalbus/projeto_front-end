@@ -1,5 +1,3 @@
-
-
 import checked from '../../../assets/checkbox-checked.svg';
 function Checkbox({ label, ...props }) {
     return (

@@ -48,7 +48,10 @@ const HomePage = () => {
       </Section>
        
       {/* Oferta em Destaque */}
-      <Section sectionMt={6} sectionMb={6}>
+      <Section 
+      sectionMt={4} 
+      sectionMb={4}
+      >
         <SpecialOfferCard data={ofertaDestaque} />
       </Section>
     </main>

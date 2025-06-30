@@ -18,7 +18,7 @@ const FormCarrinho = ({onSubmit}) => {
 
 
         <form onSubmit={handleSubmit(handleFinalSubmit)} >
-            <div className="flex flex-col lg:flex-row justify-center  h-full  pt-12 lg:pt-20">
+            <div className="flex flex-col lg:flex-row justify-center max-w-[75rem] mx-auto p-3 h-full  pt-12 lg:pt-20">
                 <div className="flex flex-col gap-4 lg:gap-0 px-8 lg:px-2 w-20rem lg:w-3/4">
 
 

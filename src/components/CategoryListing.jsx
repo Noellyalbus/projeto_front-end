@@ -10,7 +10,7 @@ const CategoryListing = () => {
     { Icon: Pants, label: "Calças" },
     { Icon: BaseballCap, label: "Bonés" },
     { Icon: Headphones, label: "Acessórios" },
-    { Icon: Sneaker, label: "Tênis", link: "/produtos/categoria/tenis" }, // único com link real
+    { Icon: Sneaker, label: "Tênis", link: "/produtos/tenis" }, // único com link real
   ];
 
   return (
