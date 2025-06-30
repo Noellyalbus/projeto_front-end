@@ -33,8 +33,7 @@ export default function Paths() {
 
           {/* página de detalhe do produto */}
           <Route path="produto/:id" element={<ProductViewPage />} />
-          <Route path="/carrinho" element={<CarrinhoPage />} />
-          <Route path="/carrinho/confirme" element={<CarrinhoCompraConfirme />} />
+          
           {/* <Route path="/products" element={<ProductListing />} /> */}
           {/* <Route path="/productview" element={<ProductView />} /> */}
           <Route path="/teste" element={<PageTeste />} />
