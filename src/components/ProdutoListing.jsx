@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProductCard from "../components/ProdutoCard";
 
-const ProductListing = ({ cols = [12], data = [], numProducts = 0 }) => {
+const ProductListing = ({ cols = [12], data = [], numProducts = 0 , colGrid = 4 }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const breakpoints = ["", "md", "lg", "xl", "2xl"];
@@ -19,7 +19,7 @@ const ProductListing = ({ cols = [12], data = [], numProducts = 0 }) => {
     : [];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+    <div className={`grid grid-cols-2 lg:grid-cols-${colGrid} gap-6`}>
       {productsToDisplay.map((product, index) => (
         <div
           key={product.id}

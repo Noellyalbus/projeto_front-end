@@ -67,7 +67,7 @@ export default function ProductViewPage() {
         sectionMb={2}
         link={{ text: "Ver todos", href: "/produtos" }}
       >
-        <ProductListing cols={[12,6,3]} data={related} numProducts={3} />
+        <ProductListing cols={[12,6,3]} data={related} numProducts={4} />
       </Section>
     </>
   );

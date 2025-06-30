@@ -44,7 +44,7 @@ const HomePage = () => {
         sectionMb={3}
         link={{text:"Ver todos", href:"/produtos"}}
       >
-        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={9} />
+        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={8} />
       </Section>
        
       {/* Oferta em Destaque */}

@@ -15,7 +15,7 @@ const CategoryListing = () => {
 
   return (
     <section className="w-full py-10">
-      <div className="max-w-75rem mx-auto p-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 justify-center ">
+      <div className="max-w-75rem mx-auto p-3 flex flex-wrap gap-5 justify-center ">
         {categories.map((category, index) => (
           <div
             key={index}

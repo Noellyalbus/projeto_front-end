@@ -20,7 +20,7 @@ const CarrinhoPage = () => {
         sectionMb={3}
         link={{text:"Ver todos", href:"/produtos"}}
       >
-        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={3} />
+        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={4} />
       </Section>
   </>
   );
