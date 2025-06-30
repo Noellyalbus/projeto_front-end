@@ -36,7 +36,6 @@ export default function Paths() {
           
           {/* <Route path="/products" element={<ProductListing />} /> */}
           {/* <Route path="/productview" element={<ProductView />} /> */}
-          <Route path="/teste" element={<PageTeste />} />
         </Route>
 
      <Route element={<LayoutLogin />}>

@@ -46,7 +46,9 @@ const CreateAccount = () => {
                     md:mt-24">
 
 
-                        <form className=" 
+                        <form
+                        onSubmit={() => navigate("/")}
+                        className=" 
                         w-full
                         md:min-w-[500px]
                         max-w-[720px]

@@ -48,7 +48,9 @@ const LoginPage = () => {
                     md:mt-24">
 
 
-                        <form className=" 
+                        <form
+                        onSubmit={() => navigate("/")}
+                         className=" 
                         w-full
                         md:min-w-[580px]
                         max-w-[720px] 
