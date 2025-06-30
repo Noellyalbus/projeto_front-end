@@ -10,6 +10,7 @@ const navigate = useNavigate();
          navigate('/carrinho/confirme/sucesso');
     }
     return (
+      
        <FormCarrinhoConfirme onSubmit={Submit} />
     )
 

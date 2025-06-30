@@ -7,8 +7,8 @@ import sapato from "../../assets/sapato-carrinho.png";
 const CarrinhoCompraSucesso = () => {
     const navigate = useNavigate();
     return (
-
-        <div className=' flex flex-col justify-center  pt-5 lg:pt-8 px-8 lg:px-24 '>
+<div className="flex flex-col lg:flex-row justify-center max-w-[75rem] mx-auto p-3 h-full  pt-12 lg:pt-20">
+        <div className=' flex flex-col justify-center '>
             <div className="flex flex-col p-8 bg-white">
                 <div className='flex flex-col items-center p-8 lg:px-20 lg:py-10 gap-5'>
                     <img src={Party} alt="Compra realizada com sucesso" />
@@ -97,6 +97,7 @@ const CarrinhoCompraSucesso = () => {
 
                 <Button variant="tertiary" type='button ' onClick={() => navigate('/')}>Voltar para Home</Button>
             </div>
+        </div>
         </div>
     );
 }
