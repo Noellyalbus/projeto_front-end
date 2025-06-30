@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 /**
- * @param {number[]} sizes  –lista de tamanhos (ex.: [38, 39, 40])
- * @param {string[]} colors –lista de cores (hex ou qualquer cor CSS)
- * @param {"text"|"color"} type –define se o seletor é de texto ou cor
- * @param {"circle"|"square"} shape –formato do “botão” de cor
- * @param {string} radius –borda quando shape = "square"  (ex.: "8px")
- * @param {string} className –classes extra para o bloco de cores
+ * @param {number[]} sizes 
+ * @param {string[]} colors 
+ * @param {"text"|"color"} type 
+ * @param {"circle"|"square"} shape 
+ * @param {string} radius 
+ * @param {string} className 
  */
 export default function ProductOptions({
   sizes = [],

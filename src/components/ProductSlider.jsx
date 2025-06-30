@@ -1,4 +1,3 @@
-/* ProductSlider.jsx ------------------------------------------------------- */
 import { useState, useEffect, useRef } from "react";
 
 export default function ProductSlider({ product, bgcolors = [] }) {
@@ -11,7 +10,6 @@ export default function ProductSlider({ product, bgcolors = [] }) {
   const [idx, setIdx] = useState(0);
   const idxRef   = useRef(0);
   const timerRef = useRef(null);
-  /* ---------------------------------------------------------------------- */
 
   /* autoplay -------------------------------------------------------------- */
   useEffect(() => {
@@ -25,11 +23,10 @@ export default function ProductSlider({ product, bgcolors = [] }) {
 
   /* helpers --------------------------------------------------------------- */
   const goTo = (i) =>
-    (idxRef.current = i) === i && setIdx(i); // mantém ref e estado em sync
+    (idxRef.current = i) === i && setIdx(i);
   const prev = () => goTo((idxRef.current - 1 + photos.length) % photos.length);
   const next = () => goTo((idxRef.current + 1) % photos.length);
 
-  /* ---------------------------------------------------------------------- */
   return (
     <div className="flex flex-col gap-5 w-full h-full">
       {/* -------- SLIDE PRINCIPAL -------- */}
@@ -46,7 +43,6 @@ export default function ProductSlider({ product, bgcolors = [] }) {
 
         {photos.length > 1 && (
           <>
-            {/* ← seta */}
             <button
               onClick={prev}
               className="group absolute left-4 top-1/2 -translate-y-1/2 z-10"
@@ -54,7 +50,6 @@ export default function ProductSlider({ product, bgcolors = [] }) {
             >
               <i className="pi pi-chevron-left text-3xl text-pink-700 transition-transform group-hover:-translate-x-1" />
             </button>
-            {/* → seta */}
             <button
               onClick={next}
               className="group absolute right-4 top-1/2 -translate-y-1/2 z-10"
@@ -77,7 +72,6 @@ export default function ProductSlider({ product, bgcolors = [] }) {
                           ${i === idx ? "border-pink-700" : "border-transparent"}`}
               style={{ backgroundColor: bgcolor }}
             >
-              {/* padding interno garante que a imagem não “encoste” na borda */}
               <img src={image} alt=""
                   className="w-full h-[80px] object-contain p-3" />
             </button>

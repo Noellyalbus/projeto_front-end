@@ -1,10 +1,7 @@
-/* src/hooks/useQueryParams.jsx */
 import { useLocation, useNavigate, matchPath } from "react-router-dom";
 import products from "../components/data/products";
 
-/* ------------------------------------------------------------------ */
-/* utilidades                                                         */
-/* ------------------------------------------------------------------ */
+/* utilidades*/
 const normalize = (txt = "") =>
   txt.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
 
@@ -19,24 +16,18 @@ const KNOWN = {
   condition: uniq(items.map((p) => p.condition.value)),
 };
 
-/* ------------------------------------------------------------------ */
-/* hook                                                               */
-/* ------------------------------------------------------------------ */
+/* hook*/
 export function useQueryParams() {
   const location = useLocation();
   const navigate = useNavigate();
   const search   = new URLSearchParams(location.search);
 
-  /* -------------------------------------------------------------- */
   /* 1) categoria “primária” vem da própria rota  (/produtos/:cat)  */
-  /* -------------------------------------------------------------- */
   const match = matchPath({ path: "/produtos/:cat" }, location.pathname);
   const primaryCategory = match?.params?.cat || "";
 
-  /* -------------------------------------------------------------- */
   /* 2) interpreta o parâmetro &filter=                             */
   /*    (transforma em brand / gender / condition, se couber)       */
-  /* -------------------------------------------------------------- */
   const parseGenericFilter = () => {
     const raw = search.get("filter") || "";
     const txt = normalize(raw);
@@ -48,9 +39,7 @@ export function useQueryParams() {
     return {};
   };
 
-  /* -------------------------------------------------------------- */
   /* 3) devolve os filtros atuais em um objeto único                */
-  /* -------------------------------------------------------------- */
   const getAll = () => {
     const generic = parseGenericFilter();
 
@@ -96,7 +85,6 @@ export function useQueryParams() {
     navigate({ pathname: location.pathname, search: search.toString() }, { replace: true });
   };
 
-  /* -------------------------------------------------------------- */
   return {
     /* leitura */
     getQueryParam  : (key) => search.get(key),

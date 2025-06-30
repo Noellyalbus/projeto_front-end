@@ -217,7 +217,7 @@ export default function ProductListingPage() {
         <>
           {/* overlay */}
           <div
-            className="fixed inset-0 z-40 bg-black/50"
+            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
             onClick={() => setShowFilters(false)}
           />
 
@@ -226,7 +226,7 @@ export default function ProductListingPage() {
             className={clsx(
               "fixed right-0 top-[100px] z-50 w-[308px] max-w-full",
               "h-[calc(100vh-100px)] bg-white shadow-lg",
-              "transform transition-transform duration-300",
+              "transform transition-transform duration-300 lg:hidden",
               showFilters ? "translate-x-0" : "translate-x-full"
             )}
           >

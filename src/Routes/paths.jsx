@@ -5,7 +5,6 @@ import CarrinhoPage from "../pages/CarrinhoPage";
 import CarrinhoCompraConfirme from "../pages/CarrinhoCompra";
 import ProductListingPage from "../pages/ProductListingPage";
 import ProductViewPage from "../pages/ProductViewPage";
-import PageTeste from "../pages/PageTeste";
 import NotFound from "../pages/NotFound";
 
 export default function Paths() {
@@ -26,9 +25,6 @@ export default function Paths() {
 
           {/* página de detalhe do produto */}
           <Route path="produto/:id" element={<ProductViewPage />} />
-
-          {/* rota de teste */}
-          <Route path="teste" element={<PageTeste />} />
         </Route>
 
         {/* qualquer coisa que não casar cai aqui */}

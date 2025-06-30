@@ -1,10 +1,3 @@
-/**
- * Toast simples ― desaparece sozinho
- * props:
- *  - open  : boolean
- *  - text  : string
- *  - onClose(): fecha manual
- */
 export default function Toast({ open, text, onClose }) {
   if (!open) return null;
 
