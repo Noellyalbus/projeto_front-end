@@ -21,6 +21,7 @@ A loja simula um e-commerce voltado para marcas urbanas como **Nike**, **Adidas*
 - 📱 Design mobile-first com TailwindCSS
 - 👟 Galeria de produtos com filtros por categoria, marca, gênero e condição
 - 🧾 Tela de finalização da compra e página de sucesso
+- 👤Autenticação simulada (login / cadastro) 
 
 ---
 
