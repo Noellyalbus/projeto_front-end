@@ -3,6 +3,7 @@ import Layout from "../layouts/PagesLayout";
 import HomePage from "../pages/HomePage";
 import CarrinhoPage from "../pages/CarrinhoPage";
 import CarrinhoCompraConfirme from "../pages/CarrinhoCompra";
+import CarrinhoCompraSucesso from "../pages/CarrinhoCompraSucesso";
 import ProductListingPage from "../pages/ProductListingPage";
 import ProductViewPage from "../pages/ProductViewPage";
 import NotFound from "../pages/NotFound";
@@ -18,6 +19,7 @@ export default function Paths() {
           {/* carrinho */}
           <Route path="carrinho" element={<CarrinhoPage />} />
           <Route path="carrinho/confirme" element={<CarrinhoCompraConfirme />} />
+          <Route path="/carrinho/confirme/sucesso" element={<CarrinhoCompraSucesso/>} />
 
           {/* listagem de produtos */}
           <Route path="produtos" element={<ProductListingPage />} />
