@@ -1,10 +1,14 @@
 import { useForm } from "react-hook-form";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
+import { MinusIcon, PlusIcon } from "@phosphor-icons/react";
+import { useState } from "react";
+
 
 const FormCarrinho = ({onSubmit}) => {
+    
       const { register, handleSubmit, reset } = useForm();
-      
+        const [number, setNumber] = useState(1);
     
         const handleFinalSubmit = (data) => {
             onSubmit(data);
@@ -56,20 +60,26 @@ const FormCarrinho = ({onSubmit}) => {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col lg:flex-row gap-1 lg:gap-0 lg:space-x-24 ">
+                                <div className="flex flex-col lg:flex-row gap-1 lg:gap-0 lg:space-x-20 ">
 
 
                                     <div>
                                         <span className="block text-dark-gray uppercase text-sm lg:hidden">quantidade</span>
-                                        <div className="flex flex-col items-center">
-                                            <button>1</button>
+                                        <div className="flex flex-col items-center lg:w-20">
+                                            <div className="flex flex-row items-center space-x-2">
+
+                                            <button  type="button" className=" rounded-sm p-0.5 cursor-pointer hover:text-white hover:bg-gray-400" onClick={()=> number > 1 && setNumber(number - 1)} ><MinusIcon size={16} /></button>
+                                            <input type="number" className="w-10 p-0.5 text-end" min={0} max={99} readOnly defaultValue={1} value={number}/>
+                                            <button type="button" className=" rounded-sm p-0.5 cursor-pointer hover:text-white hover:bg-gray-400" onClick={()=> number < 99 && setNumber(number + 1)}><PlusIcon size={16} /></button>
+
+                                            </div>
                                             <span className="text-dark-gray-2 underline text-xs">Remover item</span>
                                         </div>
                                     </div>
 
                                     <div className="flex flex-row justify-between">
                                         <span className="block text-dark-gray uppercase text-sm lg:hidden">Unitário</span>
-                                        <div className="flex flex-row lg:flex-col items-center space-x-2">
+                                        <div className="flex flex-row lg:flex-col items-center space-x-2 lg:w-20">
                                             <span className="text-light-gray-2 line-through text-xs">R$ 219,00</span>
                                             <span className="text-dark-gray-2 font-bold text-base">R$ 219,00</span>
                                         </div>
@@ -77,9 +87,9 @@ const FormCarrinho = ({onSubmit}) => {
 
                                     <div className="flex flex-row justify-between">
                                         <span className="block text-dark-gray uppercase lg:hidden">Total</span>
-                                        <div className="flex flex-row lg:flex-col items-center space-x-2">
+                                        <div className="flex flex-row lg:flex-col items-center space-x-2 lg:w-20">
                                             <span className="text-light-gray-2 line-through text-xs">R$ 219,00</span>
-                                            <span className="text-dark-gray-2 font-bold text-base">R$ 219,00</span>
+                                            <span className=" text-dark-gray-2 font-bold text-base">R$ 219,00</span>
                                         </div>
                                     </div>
                                 </div>
