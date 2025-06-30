@@ -44,11 +44,14 @@ const HomePage = () => {
         sectionMb={3}
         link={{text:"Ver todos", href:"/produtos"}}
       >
-        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={8} />
+        <ProductListing data={products.items} cols={[12,6,4,3]} numProducts={9} />
       </Section>
        
       {/* Oferta em Destaque */}
-      <Section sectionMt={6} sectionMb={6}>
+      <Section 
+      sectionMt={4} 
+      sectionMb={4}
+      >
         <SpecialOfferCard data={ofertaDestaque} />
       </Section>
     </main>

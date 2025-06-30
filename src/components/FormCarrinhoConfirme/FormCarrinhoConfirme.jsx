@@ -1,4 +1,3 @@
-
 import sapato from "../../../assets/sapato-carrinho.png";
 import { useForm } from "react-hook-form";
 import Input from "../Input/Input";
@@ -15,8 +14,9 @@ const FormCarrinhoConfirme = ({ onSubmit}) => {
         reset();
     };
     return (
+        <div className="flex flex-col lg:flex-row justify-center max-w-[75rem] mx-auto p-3 h-full  pt-12 lg:pt-20">
         <form onSubmit={handleSubmit(handleFinalSubmit)}>
-            <div className="flex flex-col justify-center pt-5 lg:pt-8 px-8 lg:px-24 space-y-7 ">
+            <div className="flex flex-col justify-center space-y-7 ">
                 <div className="">
                     <h3 className="text-md font-bold">Finalizar Compra</h3>
                 </div>
@@ -205,6 +205,7 @@ const FormCarrinhoConfirme = ({ onSubmit}) => {
             </div>
 
         </form>
+    </div>
     );
 }
 
