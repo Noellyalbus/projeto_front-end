@@ -1,59 +1,110 @@
-```markdown
-# 🛒 Digital Store – E‑commerce de Tênis & Streetwear  
+````markdown
+# 👟 Drip Store - Projeto Front End do curso Geração Tech 👕
 
-Este repositório contém o **projeto final da disciplina “Desenvolvedor Web Full Stack – Online 2.0” da Geração Tech**.  
-A aplicação simula uma loja moderna de sneakers e vestuário (Nike, Adidas, etc.), desenvolvida em **React + Tailwind CSS** com deploy contínuo no GitHub Pages.  
-O layout foi reproduzido fielmente a partir do Figma oficial do curso.
+Este projeto foi desenvolvido como parte do curso **Desenvolvedor Web Full Stack - Online - 2.0 da Geração Tech**, com o objetivo de aplicar os conhecimentos adquiridos em **React, TailwindCSS, roteamento, componentização e boas práticas de front-end moderno**.
 
-> 📄 **Documentação oficial**: <https://github.com/digitalcollegebr/projeto-digital-store>  
-> 🎨 **Figma**: <https://www.figma.com/design/cfb4F7ZXMFQmvmTn3PKI4z/DRIP-STORE---DIGITAL-COLLEGE?node-id=22-30&p=f&t=Ps4STd4bfhcwNwXw-0>
+A loja simula um e-commerce voltado para marcas urbanas como **Nike**, **Adidas** e outras do segmento streetwear, com foco em **experiência do usuário fluida**, **design responsivo** e integração com componentes reutilizáveis.
 
----
-
-## 🚀 Tecnologias & Bibliotecas
-
-| Categoria | Pacote / Ferramenta | Função principal |
-|-----------|--------------------|------------------|
-| **Core**  | `react`, `vite` | SPA rápida com HMR |
-| **Estilo**| `tailwindcss`, `postcss`, `autoprefixer` | CSS utilitário 100 % responsivo |
-| **Ícones**| `@phosphor-icons/react`, **`primeicons`** | Conjuntos de ícones modernos (PrimeIcons é importado via `import "primeicons/primeicons.css"`) :contentReference[oaicite:0]{index=0} |
-| **Roteamento** | `react-router-dom` | Navegação e rotas aninhadas |
-| **Forms** | `react-hook-form` | Validação e gerenciamento de formulários |
-| **Qualidade** | `eslint`, `eslint-plugin-react-hooks`, `eslint-plugin-react-refresh` | Linting e Fast Refresh |
-| **Build** | `vite`, `@vitejs/plugin-react` | Bundling e preview de produção |
-| **Outros** | `classnames`, `clsx`, `class-variance-authority` | Helpers de CSS & composição de classes |
-
-> Todas as dependências estão listadas no [`package.json`](package.json). :contentReference[oaicite:1]{index=1}
+> 🎨 Layout no Figma:  
+> https://www.figma.com/design/cfb4F7ZXMFQmvmTn3PKI4z/DRIP-STORE---DIGITAL-COLLEGE?node-id=22-30&p=f&t=Ps4STd4bfhcwNwXw-0  
+>
+> 📚 Base oficial do projeto:  
+> https://github.com/digitalcollegebr/projeto-digital-store
 
 ---
 
-## 👥 Colaboradores
+## 🔥 Funcionalidades
 
-| Nome | GitHub |
-|------|--------|
-| **Noelly Galeno de Albuquerque Dias** | <https://github.com/Noellyalbus> |
-| João Rubens Tabosa Braga | <https://github.com/rubenstabosaa> |
-| Ednilson Oliveira Silva | <https://github.com/Ednilson-Oli> |
+- 🎨 Interface moderna e responsiva
+- ⚡ Performance otimizada com Vite
+- 🎯 Componentes reutilizáveis
+- 🛒 Carrinho de compras com frete e cupom
+- 📱 Design mobile-first com TailwindCSS
+- 👟 Galeria de produtos com filtros por categoria, marca, gênero e condição
+- 🧾 Tela de finalização da compra e página de sucesso
 
 ---
 
-## 📂 Estrutura completa do projeto
+## 🛠 Tecnologias Utilizadas
 
+| Tecnologia | Descrição |
+|------------|-----------|
+| ⚛️ **React** | Biblioteca JavaScript para construção de interfaces |
+| ⚡ **Vite** | Ferramenta moderna para build e desenvolvimento |
+| 🎨 **TailwindCSS** | Framework de utilitários CSS responsivo |
+| 🧭 **React Router DOM** | Navegação entre páginas |
+| 🖼️ **PrimeIcons** | Conjunto de ícones da PrimeTek |
+| 🎨 **Phosphor Icons** | Ícones com estilo moderno e personalizável |
+
+---
+
+## 📋 Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado:
+
+- **Node.js** (versão 14 ou superior)
+- **npm** ou **yarn**
+
+---
+
+## ⚙️ Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Noellyalbus/projeto_front-end.git
+
+# Acesse o diretório do projeto
+cd projeto_front-end
+
+# Instale as dependências
+npm install
+````
+
+---
+
+## ▶️ Como Executar
+
+```bash
+# Inicie o servidor de desenvolvimento
+npm run dev
 ```
 
+Depois, abra o navegador e acesse:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🚀 Deploy
+
+Este projeto pode ser facilmente deployado nas seguintes plataformas:
+
+* ✅ **GitHub Pages**
+
+> Link do deploy (ainda vou colocar):
+
+---
+
+## 📁 Estrutura do Projeto (`/src`)
+
+```
 src/
+├── App.jsx
+├── main.jsx
+├── assets/
+│   └── tenis-kswis.png
 ├── components/
 │   ├── Button/
 │   │   ├── Button.jsx
 │   │   └── styled.css
-    ├── data/
-│   └── products.js
 │   ├── Header.jsx
 │   ├── Footer.jsx
 │   ├── Logo.jsx
 │   ├── ProductCard.jsx
-│   ├── ProductSlider.jsx
 │   ├── ProductFilter.jsx
+│   ├── ProductSlider.jsx
 │   └── (outros componentes reutilizáveis)
 ├── forms/
 │   ├── FormCarrinho.jsx
@@ -73,80 +124,34 @@ src/
 │   └── NotFound.jsx
 ├── Routes/
 │   └── paths.jsx
-├── App.jsx
-├── main.jsx
-
-````
-*(Árvore gerada a partir do repositório `main`)* :contentReference[oaicite:2]{index=2}
-
----
-
-## ✅ Funcionalidades
-
-- **Homepage** com carrossel de destaques & banners promocionais  
-- **Filtro lateral** (marca • categoria • gênero • condição) + ordenação “Mais relevantes / Menor preço / Maior preço”  
-- **Product View** com galeria, seleção de tamanho & cor, box de compra e produtos relacionados  
-- **Carrinho** com resumo, aplicação de cupom, cálculo de frete, finalização e página de sucesso  
-- **Autenticação simulada** (login / cadastro)  
-- **Responsividade total** (mobile‑first)  
-- **Deploy automático** via GitHub Pages
-
----
-
-## 🧑‍💻 Como rodar localmente
-
-```bash
-# 1. Clone seu fork ou o repositório oficial
-git clone https://github.com/Noellyalbus/projeto_front-end.git
-
-# 2. Entre na pasta
-cd projeto_front-end
-
-# 3. Instale as dependências
-npm install        # ou pnpm install / yarn
-
-# 4. Execute em modo desenvolvimento
-npm run dev
-
-# 5. Acesse http://localhost:5173 no navegador
-````
-
-### 🎯 Scripts úteis
-
-```bash
-npm run build     # gera versão de produção em dist/
-npm run preview   # serve a pasta dist/ para testes finais
-npm run lint      # executa ESLint
+├── data/
+│   └── products.js
 ```
 
 ---
 
-## 🚀 Deploy
+## 👥 Colaboradores
 
-O deploy está configurado no branch `gh-pages`. Basta executar:
+Agradecimentos especiais a todos que contribuíram para este projeto:
 
-```bash
-npm run build
-git subtree push --prefix dist origin gh-pages
+* 👩‍💻 **Noelly Galeno de Albuquerque Dias**
+  [@Noellyalbus](https://github.com/Noellyalbus)
+
+* 👨‍💻 João Rubens Tabosa Braga
+  [@rubenstabosaa](https://github.com/rubenstabosaa)
+
+* 👨‍💻 Ednilson Oliveira Silva
+  [@Ednilson-Oli](https://github.com/Ednilson-Oli)
+
+---
+
+## 📃 Licença
+
+Este projeto está sob a licença **MIT**.
+Sinta-se livre para usá-lo, modificá-lo e distribuí-lo com os devidos créditos.
+
+---
+
+**Feito com dedicação por alunos da Geração Tech 💙**
+
 ```
-
-➡️ **Visualização**: [Drip Store]()
-
----
-
-## 📚 Referências & Créditos
-
-* **Curso**: Desenvolvedor Web Full Stack – Online 2.0 (Geração Tech)
-* **Layout**: Figma DRIP STORE (Digital College)
-* **Icones**: Phosphor Icons & PrimeIcons
-* **Stack**: React 19 + Vite 6 + Tailwind 4
-
----
-
-### Licença
-
-Distribuído sob a licença **MIT** – veja o arquivo [`LICENSE`](LICENSE) para mais detalhes.
-
----
-
-*Happy coding & keep it street!* 🙌
