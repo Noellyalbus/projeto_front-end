@@ -1,4 +1,3 @@
-````markdown
 # 👟 Drip Store - Projeto Front End do curso Geração Tech 👕
 
 Este projeto foi desenvolvido como parte do curso **Desenvolvedor Web Full Stack - Online - 2.0 da Geração Tech**, com o objetivo de aplicar os conhecimentos adquiridos em **React, TailwindCSS, roteamento, componentização e boas práticas de front-end moderno**.
