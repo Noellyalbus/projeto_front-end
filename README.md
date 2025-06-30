@@ -152,5 +152,3 @@ Sinta-se livre para usá-lo, modificá-lo e distribuí-lo com os devidos crédit
 ---
 
 **Feito com dedicação por alunos da Geração Tech 💙**
-
-```
