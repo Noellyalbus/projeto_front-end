@@ -49,8 +49,8 @@ const ProductFilter = ({
               <Checkbox
                 key={c.value}
                 label={c.name}
-                checked={filters.categorys.includes(c.value)}
-                onChange={() => updateFilter('categorys', c.value)}
+                checked={filters.category.includes(c.value)}
+                onChange={() => updateFilter('category', c.value)}
               />
             ))}
           </div>
@@ -90,7 +90,7 @@ const ProductFilter = ({
 
       {/* texto fora da caixa */}
       <p className="text-sm text-gray-700">
-        {selectedCats.length ? selectedCats.join(', ') : 'Nenhuma categoria selecionada'}
+        {selectedCats ? selectedCats.join(', ') : 'Nenhuma categoria selecionada'}
       </p>
     </aside>
   );

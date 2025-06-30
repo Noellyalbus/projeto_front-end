@@ -1,87 +1,75 @@
-// ================= ProductListingPage.jsx =================
-import { useState, useEffect, useMemo } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect, useMemo } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import clsx from "clsx";
 
-import Section from '../components/Section';
-import ProductListing from '../components/ProdutoListing';
-import ProductFilter from '../components/ProductFilter';
+import Section        from "../components/Section";
+import ProductListing from "../components/ProdutoListing";
+import ProductFilter  from "../components/ProductFilter";
+import products       from "../components/data/products";
 
-import products from '../components/data/products';
+/* ---------------------------------------------------------------- helpers */
+const normalize = (txt = "") =>
+  txt.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
 
-/* ----------------------------------------------------------
- * helpers
- * -------------------------------------------------------- */
-const normalize = (txt = '') =>
-  txt.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
-
-const uniqByValue = (arr) => {
-  const map = new Map();
-  arr.forEach(({ name, value }) => {
-    if (!map.has(value)) map.set(value, name);
-  });
-  return [...map.entries()].map(([value, name]) => ({ name, value }));
-};
+const uniq = (arr) =>
+  [...new Map(arr.map(({ value, name }) => [value, name]))].map(([value, name]) => ({
+    value,
+    name,
+  }));
 
 const buildFilterLists = (items) => ({
-  brand:     uniqByValue(items.map((p) => p.brand)),
-  category:  uniqByValue(items.map((p) => p.category)),
-  gender:    uniqByValue(items.map((p) => p.gender)),
-  condition: uniqByValue(items.map((p) => p.condition)),
+  brand:     uniq(items.map((p) => p.brand)),
+  category:  uniq(items.map((p) => p.category)),
+  gender:    uniq(items.map((p) => p.gender)),
+  condition: uniq(items.map((p) => p.condition)),
 });
 
-/* ----------------------------------------------------------
- * COMPONENT
- * -------------------------------------------------------- */
+/* ------------------------------------------------------------------ page */
 export default function ProductListingPage() {
-  /* raw data */
-  const items = products.items || [];
+  /* ---------- dados brutos ---------- */
+  const items = products.items;
   const lists = useMemo(() => buildFilterLists(items), [items]);
 
-  /* routing */
-  const { category = '' } = useParams();
+  /* ---------- routing ---------- */
+  const { category = "" } = useParams();
   const navigate  = useNavigate();
   const location  = useLocation();
 
-  /* state */
-  const [sortOption, setSortOption] = useState('relevantes');
-  const [filters, setFilters]       = useState({
-    categorys: [],
+  /* ---------- state ---------- */
+  const [sortOption,  setSortOption] = useState("relevantes");
+  const [filters,     setFilters]    = useState({
+    category:  [],
     brand:     [],
     gender:    [],
-    condition: '',
+    condition: "",
   });
-  const [searchText, setSearchText] = useState('');
-  const [filtered,   setFiltered]   = useState(items);
+  const [searchText,  setSearchText] = useState("");
+  const [filtered,    setFiltered]   = useState(items);
+  const [showFilters, setShowFilters] = useState(false); // ⬅ controla drawer mobile
 
-  /* ------------------------------------------------------
-   * sync filters with URL
-   * ---------------------------------------------------- */
+  /* ---------- lê URL ---------- */
   useEffect(() => {
     const sp = new URLSearchParams(location.search);
+
     setFilters({
-      categorys: [category, ...sp.getAll('cat')].filter(Boolean),
-      brand:     sp.getAll('brand'),
-      gender:    sp.getAll('gender'),
-      condition: sp.get('condition') || '',
+      category:  [category, ...sp.getAll("cat")].filter(Boolean),
+      brand:     sp.getAll("brand"),
+      gender:    sp.getAll("gender"),
+      condition: sp.get("condition") || "",
     });
-    setSearchText(sp.get('filter') || '');
+    setSearchText(sp.get("filter") || "");
   }, [category, location.search]);
 
-  /* ------------------------------------------------------
-   * filter + sort list
-   * ---------------------------------------------------- */
+  /* ---------- filtra + ordena ---------- */
   useEffect(() => {
     let list = [...items];
 
-    if (filters.categorys.length)
-      list = list.filter((p) => filters.categorys.includes(p.category.value));
-
+    if (filters.category.length)
+      list = list.filter((p) => filters.category.includes(p.category.value));
     if (filters.brand.length)
       list = list.filter((p) => filters.brand.includes(p.brand.value));
-
     if (filters.gender.length)
       list = list.filter((p) => filters.gender.includes(p.gender.value));
-
     if (filters.condition)
       list = list.filter(
         (p) => normalize(p.condition.value) === normalize(filters.condition)
@@ -97,65 +85,95 @@ export default function ProductListingPage() {
       );
     }
 
-    if (sortOption === 'menor-preco')      list.sort((a, b) => a.price - b.price);
-    else if (sortOption === 'maior-preco') list.sort((a, b) => b.price - a.price);
+    if (sortOption === "menor-preco")      list.sort((a, b) => a.price - b.price);
+    else if (sortOption === "maior-preco") list.sort((a, b) => b.price - a.price);
 
     setFiltered(list);
   }, [items, filters, searchText, sortOption]);
 
-  /* ------------------------------------------------------
-   * helpers
-   * ---------------------------------------------------- */
-  const toggleInArray = (arr, val) =>
-    arr.includes(val) ? arr.filter((v) => v !== val) : [...arr, val];
+  /* ---------- helpers ---------- */
+  const toggle = (arr, v) => (arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v]);
 
   const updateFilter = (key, value) => {
+    if (key === "sort") { setSortOption(value); return; }
+
     const sp   = new URLSearchParams(location.search);
     const next = { ...filters };
 
     switch (key) {
-      case 'categorys':
-        next.categorys = toggleInArray(next.categorys, value);
-        sp.delete('cat');
-        next.categorys.slice(1).forEach((c) => sp.append('cat', c));
+      case "category":
+        next.category = toggle(next.category, value);
+        sp.delete("cat");
+        next.category.slice(1).forEach((c) => sp.append("cat", c));
         break;
-      case 'brand':
-        next.brand = toggleInArray(next.brand, value);
-        sp.delete('brand');
-        next.brand.forEach((b) => sp.append('brand', b));
+      case "brand":
+        next.brand = toggle(next.brand, value);
+        sp.delete("brand");
+        next.brand.forEach((b) => sp.append("brand", b));
         break;
-      case 'gender':
-        next.gender = toggleInArray(next.gender, value);
-        sp.delete('gender');
-        next.gender.forEach((g) => sp.append('gender', g));
+      case "gender":
+        next.gender = toggle(next.gender, value);
+        sp.delete("gender");
+        next.gender.forEach((g) => sp.append("gender", g));
         break;
-      case 'condition':
-        next.condition = next.condition === value ? '' : value;
-        next.condition ? sp.set('condition', next.condition) : sp.delete('condition');
+      case "condition":
+        next.condition = next.condition === value ? "" : value;
+        next.condition ? sp.set("condition", next.condition) : sp.delete("condition");
         break;
-      case 'sort':
-        setSortOption(value);
-        return; // dropdown só altera sortOption
       default:
         return;
     }
 
-    const path = `/produtos${next.categorys[0] ? `/${next.categorys[0]}` : ''}`;
     setFilters(next);
+    const path = `/produtos${next.category[0] ? `/${next.category[0]}` : ""}`;
     navigate({ pathname: path, search: sp.toString() });
   };
 
-  /* ------------------------------------------------------
-   * render
-   * ---------------------------------------------------- */
+  /* ---------------------------------------------------------------- render */
   return (
     <Section sectionMb={2}>
-      {/* --- TÍTULO + DROPDOWN (fora da sidebar) --- */}
-      <div className="flex justify-between items-center mb-6">
+      {/* ---------- TOP BAR MOBILE ---------- */}
+      <div className="xl:hidden flex items-center gap-3 mb-4 px-5">
+        {/* dropdown */}
+        <select
+          value={sortOption}
+          onChange={(e) => updateFilter("sort", e.target.value)}
+          className="w-full h-[60px] px-4 text-sm rounded-md
+                     border border-dark-gray-2 text-dark-gray-2
+                     transition-colors
+                     hover:border-[#b5b6f2] hover:text-primary
+                     focus:outline-none focus:border-primary focus:text-primary cursor-pointer"
+        >
+          <option value="relevantes">Mais relevantes</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
+        </select>
+
+        {/* botão filtro */}
+        <button
+          onClick={() => setShowFilters(true)}
+          className="w-[60px] h-[60px] flex items-center justify-center
+                     bg-primary rounded-md text-white text-2xl shadow
+                     hover:brightness-110 active:scale-95 cursor-pointer"
+          aria-label="Abrir filtros"
+        >
+          <i className="pi pi-filter" />
+        </button>
+      </div>
+
+      {/* título mobile */}
+      <h2 className="xl:hidden text-base font-bold text-dark-gray-2 mb-6 px-5">
+        Resultados para todos os produtos – {filtered.length} produto
+        {filtered.length !== 1 && "s"}
+      </h2>
+
+      {/* ---------- TOP BAR DESKTOP ---------- */}
+      <div className="hidden xl:flex justify-between items-center mb-6">
         <h2 className="text-base font-bold text-dark-gray-2">
           Resultados para todos os produtos – {filtered.length} produto
-          {filtered.length !== 1 && 's'}
+          {filtered.length !== 1 && "s"}
         </h2>
+
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="text-sm font-medium text-dark-gray-2">
             Ordenar por:
@@ -163,8 +181,11 @@ export default function ProductListingPage() {
           <select
             id="sort"
             value={sortOption}
-            onChange={(e) => updateFilter('sort', e.target.value)}
-            className="border border-gray-300 rounded-md px-2 py-1 text-sm focus:outline-none"
+            onChange={(e) => updateFilter("sort", e.target.value)}
+            className="w-[332px] h-[40px] border border-dark-gray-2 text-dark-gray-2
+                       rounded-md px-2 py-1 text-sm
+                       focus:outline-none
+                       cursor-pointer"
           >
             <option value="relevantes">Mais relevantes</option>
             <option value="menor-preco">Menor preço</option>
@@ -173,25 +194,62 @@ export default function ProductListingPage() {
         </div>
       </div>
 
+      {/* ---------- GRID PRINCIPAL ---------- */}
       <div className="grid grid-cols-1 xl:grid-cols-[308px_1fr] gap-6">
-        {/* ------ SIDEBAR ------ */}
-        <ProductFilter
-          lists={lists}
-          filters={filters}
-          updateFilter={updateFilter}
-          sortOption={sortOption}
-          setSortOption={(val) => updateFilter('sort', val)}
-        />
+        {/* Sidebar permanente no desktop */}
+        <div className="hidden xl:block">
+          <ProductFilter lists={lists} filters={filters} updateFilter={updateFilter} />
+        </div>
 
-        {/* ------ LISTAGEM DE CARDS (sem grid duplo) ------ */}
+        {/* Cards */}
         {filtered.length > 0 ? (
-          <ProductListing data={filtered} cols={[6,4]} />
+          <ProductListing data={filtered} cols={[4, 6]} />
         ) : (
-          <div className="bg-indigo-50 text-indigo-600 px-4 py-3 rounded-md border-l-4 border-indigo-600">
+          <div className="inline-flex lg:inline-flex items-center gap-2 px-4 py-3 lg:h-fit bg-indigo-50 text-indigo-600 border-l-4 border-indigo-600 rounded-md font-semibold">
+            <i className="pi pi-info-circle text-base" />
             Produto não encontrado.
           </div>
         )}
       </div>
+
+      {/* ---------- FILTRO MOBILE ---------- */}
+      {showFilters && (
+        <>
+          {/* overlay */}
+          <div
+            className="fixed inset-0 z-40 bg-black/50"
+            onClick={() => setShowFilters(false)}
+          />
+
+          {/* painel lateral */}
+          <aside
+            className={clsx(
+              "fixed right-0 top-[100px] z-50 w-[308px] max-w-full",
+              "h-[calc(100vh-100px)] bg-white shadow-lg",
+              "transform transition-transform duration-300",
+              showFilters ? "translate-x-0" : "translate-x-full"
+            )}
+          >
+            <div className="p-6 h-full overflow-y-auto">
+              <button
+                className="text-2xl text-dark-gray-2 mb-4 cursor-pointer"
+                onClick={() => setShowFilters(false)}
+                aria-label="Fechar filtros"
+              >
+                <i className="pi pi-times" />
+              </button>
+
+              <ProductFilter
+                lists={lists}
+                filters={filters}
+                updateFilter={updateFilter}
+                closeDrawer={() => setShowFilters(false)}
+              />
+            </div>
+          </aside>
+
+        </>
+      )}
     </Section>
   );
 }

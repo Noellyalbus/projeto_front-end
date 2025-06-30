@@ -1,30 +1,39 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../layouts/PagesLayout";
-import NotFound from "../pages/NotFound";
 import HomePage from "../pages/HomePage";
-import PageTeste from "../pages/PageTeste";
 import CarrinhoPage from "../pages/CarrinhoPage";
 import CarrinhoCompraConfirme from "../pages/CarrinhoCompra";
 import ProductListingPage from "../pages/ProductListingPage";
-// import ProductView from "../pages/ProductViewPage";
+import ProductViewPage from "../pages/ProductViewPage";
+import PageTeste from "../pages/PageTeste";
+import NotFound from "../pages/NotFound";
 
-function Paths() {
+export default function Paths() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        {/*  layout com header/footer  */}
+        <Route element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/carrinho" element={<CarrinhoPage/>} />
-          <Route path="/carrinho/confirme" element={<CarrinhoCompraConfirme/>} />
-          <Route path="/produtos" element={<ProductListingPage />} />
-          {/* <Route path="/products/productview" element={<ProductView />} /> */}
-          {/* <Route path="/Login" element={<LoginPage/>} /> */}
-          <Route path="/teste" element={<PageTeste />} />
+
+          {/* carrinho */}
+          <Route path="carrinho" element={<CarrinhoPage />} />
+          <Route path="carrinho/confirme" element={<CarrinhoCompraConfirme />} />
+
+          {/* listagem de produtos */}
+          <Route path="produtos" element={<ProductListingPage />} />
+          <Route path="produtos/:category" element={<ProductListingPage />} />
+
+          {/* página de detalhe do produto */}
+          <Route path="produto/:id" element={<ProductViewPage />} />
+
+          {/* rota de teste */}
+          <Route path="teste" element={<PageTeste />} />
         </Route>
-        <Route path="*" element={<NotFound/>} />
+
+        {/* qualquer coisa que não casar cai aqui */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
-
-export default Paths;
