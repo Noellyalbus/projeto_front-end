@@ -1,4 +1,7 @@
 import Logo from "./Logo";
+import logoFacebook from "../../assets/facebook.svg";
+import logoInstagram from "../../assets/instagram.svg";
+import logoTwitter from "../../assets/twitter.svg";
 
 const InfoCol = ({ title, info }) => {
   return (
@@ -66,9 +69,9 @@ const Footer = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur voluptate at dolore, amet est reiciendis, minus dicta dolor, repellendus sit ad.
           </p>
           <div className="flex gap-3 mt-4">
-            <img src="../../assets/facebook.svg" alt="Facebook" className="w-6 h-6" />
-            <img src="../../assets/instagram.svg" alt="Instagram" className="w-6 h-6" />
-            <img src="../../assets/twitter.svg" alt="Twitter" className="w-6 h-6" />
+            <img src={logoFacebook} alt="Facebook" className="w-6 h-6" />
+            <img src={logoInstagram} alt="Instagram" className="w-6 h-6" />
+            <img src={logoTwitter} alt="Twitter" className="w-6 h-6" />
           </div>
         </div>
 
