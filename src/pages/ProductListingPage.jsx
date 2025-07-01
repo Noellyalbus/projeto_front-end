@@ -203,7 +203,7 @@ export default function ProductListingPage() {
 
         {/* Cards */}
         {filtered.length > 0 ? (
-          <ProductListing data={filtered} colGrid={[3]} />
+          <ProductListing data={filtered} colGrid={[3,3]} />
         ) : (
           <div className="inline-flex lg:inline-flex items-center gap-2 px-4 py-3 lg:h-fit bg-indigo-50 text-indigo-600 border-l-4 border-indigo-600 rounded-md font-semibold">
             <i className="pi pi-info-circle text-base" />
