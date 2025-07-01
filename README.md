@@ -1,12 +1,155 @@
-# React + Vite
+# 👟 Drip Store - Projeto Front End do curso Geração Tech 👕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto foi desenvolvido como parte do curso **Desenvolvedor Web Full Stack - Online - 2.0 da Geração Tech**, com o objetivo de aplicar os conhecimentos adquiridos em **React, TailwindCSS, roteamento, componentização e boas práticas de front-end moderno**.
 
-Currently, two official plugins are available:
+A loja simula um e-commerce voltado para marcas urbanas como **Nike**, **Adidas** e outras do segmento streetwear, com foco em **experiência do usuário fluida**, **design responsivo** e integração com componentes reutilizáveis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 🎨 Layout no Figma:  
+> https://www.figma.com/design/cfb4F7ZXMFQmvmTn3PKI4z/DRIP-STORE---DIGITAL-COLLEGE?node-id=22-30&p=f&t=Ps4STd4bfhcwNwXw-0  
+>
+> 📚 Base oficial do projeto:  
+> https://github.com/digitalcollegebr/projeto-digital-store
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔥 Funcionalidades
+
+- 🎨 Interface moderna e responsiva
+- ⚡ Performance otimizada com Vite
+- 🎯 Componentes reutilizáveis
+- 🛒 Carrinho de compras com frete e cupom
+- 📱 Design mobile-first com TailwindCSS
+- 👟 Galeria de produtos com filtros por categoria, marca, gênero e condição
+- 🧾 Tela de finalização da compra e página de sucesso
+- 👤Autenticação simulada (login / cadastro) 
+
+---
+
+## 🛠 Tecnologias Utilizadas
+
+| Tecnologia | Descrição |
+|------------|-----------|
+| ⚛️ **React** | Biblioteca JavaScript para construção de interfaces |
+| ⚡ **Vite** | Ferramenta moderna para build e desenvolvimento |
+| 🎨 **TailwindCSS** | Framework de utilitários CSS responsivo |
+| 🧭 **React Router DOM** | Navegação entre páginas |
+| 🖼️ **PrimeIcons** | Conjunto de ícones da PrimeTek |
+| 🎨 **Phosphor Icons** | Ícones com estilo moderno e personalizável |
+
+---
+
+## 📋 Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado:
+
+- **Node.js** (versão 14 ou superior)
+- **npm** ou **yarn**
+
+---
+
+## ⚙️ Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Noellyalbus/projeto_front-end.git
+
+# Acesse o diretório do projeto
+cd projeto_front-end
+
+# Instale as dependências
+npm install
+````
+
+---
+
+## ▶️ Como Executar
+
+```bash
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+Depois, abra o navegador e acesse:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🚀 Deploy
+
+Este projeto pode ser facilmente deployado nas seguintes plataformas:
+
+* ✅ **GitHub Pages**
+
+> Link do deploy (https://noellyalbus.github.io/projeto_front-end/):
+
+---
+
+## 📁 Estrutura do Projeto (`/src`)
+
+```
+src/
+├── App.jsx
+├── main.jsx
+├── assets/
+│   └── tenis-kswis.png
+├── components/
+│   ├── Button/
+│   │   ├── Button.jsx
+│   │   └── styled.css
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── Logo.jsx
+│   ├── ProductCard.jsx
+│   ├── ProductFilter.jsx
+│   ├── ProductSlider.jsx
+│   └── (outros componentes reutilizáveis)
+├── forms/
+│   ├── FormCarrinho.jsx
+│   └── FormCarrinhoConfirme.jsx
+├── layouts/
+│   ├── PagesLayout.jsx
+│   └── LayoutLogin.jsx
+├── pages/
+│   ├── HomePage.jsx
+│   ├── ProductListingPage.jsx
+│   ├── ProductViewPage.jsx
+│   ├── CarrinhoPage.jsx
+│   ├── CarrinhoCompra.jsx
+│   ├── CarrinhoCompraSucesso.jsx
+│   ├── LoginPage.jsx
+│   ├── CreateAccPage.jsx
+│   └── NotFound.jsx
+├── Routes/
+│   └── paths.jsx
+├── data/
+│   └── products.js
+```
+
+---
+
+## 👥 Colaboradores
+
+Agradecimentos especiais a todos que contribuíram para este projeto:
+
+* 👩‍💻 **Noelly Galeno de Albuquerque Dias**
+  [@Noellyalbus](https://github.com/Noellyalbus)
+
+* 👨‍💻 João Rubens Tabosa Braga
+  [@rubenstabosaa](https://github.com/rubenstabosaa)
+
+* 👨‍💻 Ednilson Oliveira Silva
+  [@Ednilson-Oli](https://github.com/Ednilson-Oli)
+
+---
+
+## 📃 Licença
+
+Este projeto está sob a licença **MIT**.
+Sinta-se livre para usá-lo, modificá-lo e distribuí-lo com os devidos créditos.
+
+---
+
+**Feito com dedicação por alunos da Geração Tech 💙**

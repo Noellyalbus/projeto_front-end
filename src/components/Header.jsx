@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Logo from "./Logo";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "primeicons/primeicons.css";
 import Button from "./Button/Button";
 
@@ -8,6 +8,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isCarrinhoOpen, setIsCarrinhoOpen] = useState(false);
+  const LoginNavigate = useNavigate()
 
   return (
     <>
@@ -63,13 +64,13 @@ const Header = () => {
               {/* Botões login e cadastro desktop */}
               <div className="hidden lg:flex gap-4 px-8">
                 <NavLink
-                  to="/cadastro"
+                  to="/register"
                   className="underline text-gray-700 font-normal px-3 py-2 hover:text-pink-600 transition-colors duration-300"
                 >
                   Cadastre-se
                 </NavLink>
                 <button
-                  to="/login"
+                  onClick={() => LoginNavigate("/login")}
                   className="btn-primary px-3 py-2 w-[114px]"
                 >
                   Entrar
