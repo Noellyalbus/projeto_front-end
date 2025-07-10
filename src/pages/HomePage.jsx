@@ -8,7 +8,7 @@ import SpecialOfferCard from "../components/SpecialOffer";
 
 const HomePage = () => {
   const ofertaDestaque ={
-      image: "/oferta-air-jordan.png",
+      image: "./oferta-air-jordan.png",
       title: "Oferta exclusiva",
       subtitle: "Air Jordan edição limitada",
       description: "Tênis Jordan amarelo com detalhes pretos com 35% de desconto só por hoje!",

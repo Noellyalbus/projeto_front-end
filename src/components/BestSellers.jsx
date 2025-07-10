@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 
 const collections = [
   {
-    image: "/collection-1.png",
+    image: "./collection-1.png",
     link: "/produtos/camisa",
     badge: "30% OFF",
   },
   {
-    image: "/collection-2.png",
+    image: "./collection-2.png",
     link: "/produtos/tenis",
     badge: "30% OFF",
   },
   {
-    image: "/collection-3.png",
+    image: "./collection-3.png",
     link: "/produtos/headphone",
     badge: "30% OFF",
   },

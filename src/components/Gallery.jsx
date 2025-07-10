@@ -1,30 +1,29 @@
 import { useState, useEffect } from 'react';
 
-
 const images = [
   {
-    src: '/tenis-nike.png',
+    src: './tenis-nike.png',
     alt: 'Tênis Nike',
     title: 'Queima de estoque Nike 🔥',
     description: 'Sinta o conforto da nova linha Nike Air.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: '/tenis-kswis.png',
+    src: './tenis-kswis.png',
     alt: 'Tênis K-Swiss',
     title: 'Durabilidade Máxima',
     description: 'O clássico da K-Swiss em nova edição.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: '/tenis-adidas.png',
+    src: './tenis-adidas.png',
     alt: 'Tênis Adidas',
     title: 'Energia nos Seus Passos',
     description: 'Tecnologia Boost para mais performance.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: '/tenis-puma.png',
+    src: './tenis-puma.png',
     alt: 'Tênis Puma',
     title: 'Design Moderno',
     description: 'Puma Fusion: onde estilo encontra potência.',
@@ -94,7 +93,7 @@ const Gallery = () => {
             
             {/* Imagem ornament */}
             <img
-              src="/assets/Ornament 11.png"
+              src="/projeto_front-end/assets/ornament -11.png"
               alt="Ornamento"
               className="absolute top-5 right-5 w-[140px] sm:w-[140px] xl:w-[140px] z-0"
             />
