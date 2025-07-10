@@ -16,7 +16,7 @@ import NotFound from "../pages/NotFound";
 
 export default function Paths() {
   return (
-    <BrowserRouter>
+    <>
       <Routes>
         {/*  layout com header/footer  */}
         <Route element={<Layout />}>
@@ -44,7 +44,7 @@ export default function Paths() {
         {/* qualquer coisa que não casar cai aqui */}
         <Route path="*" element={<NotFound  />} />
       </Routes>
-    </BrowserRouter>
+    </>
 
   );
 }

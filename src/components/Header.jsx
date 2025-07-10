@@ -3,6 +3,8 @@ import Logo from "./Logo";
 import { NavLink, useNavigate } from "react-router-dom";
 import "primeicons/primeicons.css";
 import Button from "./Button/Button";
+import sapato from "../../assets/sapato-carrinho.png";
+import sapatoCarrinho from "../../assets/sapato-carrinho.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -97,7 +99,7 @@ const Header = () => {
 
                       <div className="flex flex-row  py-2 gap-4">
                         <div className="bg-soft-purple p-2 lg:p-5 h-max" >
-                          <img src="../../assets/sapato-carrinho.png" alt="" />
+                          <img src={sapato} alt="sapato" />
                         </div>
                         <div className="space-y-2 lg:space-y-0">
                           <div>
@@ -114,7 +116,7 @@ const Header = () => {
                       </div>
                       <div className="flex flex-row  py-2 gap-4">
                         <div className="bg-soft-purple p-2 lg:p-5 h-max" >
-                          <img src="../../assets/sapato-carrinho.png" alt="" />
+                          <img src= {sapatoCarrinho} alt="" />
                         </div>
                         <div className="space-y-2 lg:space-y-0">
                           <div>
