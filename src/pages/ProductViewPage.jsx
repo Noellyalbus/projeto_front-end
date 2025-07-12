@@ -5,7 +5,6 @@ import ProductSlider from "../components/ProductSlider";
 import BuyBox from "../components/BuyBox";
 import ProductListing from "../components/ProdutoListing";
 
-/* breadcrumb simples */
 const Breadcrumb = ({ product }) => (
   <nav className="text-sm mb-6">
     <Link to="/" className="text-dark-gray-2 font-bold hover:underline">Home</Link>
@@ -31,10 +30,8 @@ export default function ProductViewPage() {
   const { id } = useParams();
   const product = productsData.items.find((p) => String(p.id) === id);
 
-  // Proteção: se o produto não existir
   if (!product) return null;
 
-  // Relacionados: mesmo categoria sem o atual
   const sameCategory = productsData.items.filter(
     (p) =>
       p.id !== product.id &&
@@ -53,21 +50,17 @@ export default function ProductViewPage() {
     <>
       <Section sectionMb={3}>
         <Breadcrumb product={product} />
-
-        {/* grid principal */}
         <div className="grid xl:grid-cols-[1fr_360px] gap-8">
           <ProductSlider product={product} bgcolors={productsData.bgcolors} />
           <BuyBox product={product} general={productsData} />
         </div>
       </Section>
-
-      {/* relacionados */}
       <Section
         title="Produtos Relacionados"
         sectionMb={2}
         link={{ text: "Ver todos", href: "/produtos" }}
       >
-        <ProductListing cols={[12,6,3]} data={related} numProducts={4} />
+        <ProductListing cols={[12, 6, 3]} data={related} numProducts={4} />
       </Section>
     </>
   );

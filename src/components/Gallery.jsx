@@ -2,28 +2,28 @@ import { useState, useEffect } from 'react';
 
 const images = [
   {
-    src: './tenis-nike.png',
+    src: '/projeto_front-end/tenis-nike.png',
     alt: 'Tênis Nike',
     title: 'Queima de estoque Nike 🔥',
     description: 'Sinta o conforto da nova linha Nike Air.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: './tenis-kswis.png',
+    src: '/projeto_front-end/tenis-kswis.png',
     alt: 'Tênis K-Swiss',
     title: 'Durabilidade Máxima',
     description: 'O clássico da K-Swiss em nova edição.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: './tenis-adidas.png',
+    src: '/projeto_front-end/tenis-adidas.png',
     alt: 'Tênis Adidas',
     title: 'Energia nos Seus Passos',
     description: 'Tecnologia Boost para mais performance.',
     bgcolor: '#D9D9D9',
   },
   {
-    src: './tenis-puma.png',
+    src: '/projeto_front-end/tenis-puma.png',
     alt: 'Tênis Puma',
     title: 'Design Moderno',
     description: 'Puma Fusion: onde estilo encontra potência.',
