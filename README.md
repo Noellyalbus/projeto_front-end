@@ -83,7 +83,7 @@ Este projeto pode ser facilmente deployado nas seguintes plataformas:
 
 * ✅ **GitHub Pages**
 
-> Link do deploy (aguarde...):
+> Link do deploy : https://noellyalbus.github.io/projeto_front-end/
 
 ---
 
