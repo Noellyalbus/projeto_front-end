@@ -93,7 +93,7 @@ const Gallery = () => {
             
             {/* Imagem ornament */}
             <img
-              src="/projeto_front-end/assets/ornament -11.png"
+              src="assets\ornament -11.png"
               alt="Ornamento"
               className="absolute top-5 right-5 w-[140px] sm:w-[140px] xl:w-[140px] z-0"
             />
