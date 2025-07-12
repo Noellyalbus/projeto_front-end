@@ -39,7 +39,7 @@ const FormCarrinho = ({onSubmit}) => {
                             <div className="flex flex-col lg:flex-row justify-between">
                                 <div className="flex flex-row  py-2 gap-4">
                                     <div className="bg-soft-purple p-2 lg:p-5 h-max" >
-                                        <img src="/projeto_front-end/assets/sapato-carrinho.png" alt="" />
+                                        <img src="./assets/sapato-carrinho.png" alt="" />
                                     </div>
                                     <div className="space-y-2 lg:space-y-0">
                                         <div>
